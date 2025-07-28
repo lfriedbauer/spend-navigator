@@ -3,6 +3,30 @@ import { DollarSign, TrendingDown, Clock, TrendingUp, CreditCard, Building, Wifi
 import ContactForm from './ContactForm';
 import VendorLookup from './VendorLookup';
 import industryCategories from './data/industryCategories.json';
+import React, { useState, useEffect } from 'react';
+import { DollarSign, TrendingDown, Clock, TrendingUp, CreditCard, Building, Wifi, Truck, Package, Heart, Users, Coffee, FileText, Settings } from 'lucide-react';
+import EconomicDashboard from './EconomicDashboard';
+import VendorLookup from './VendorLookup';
+import ContactForm from './ContactForm';
+import industryCategories from './data/industryCategories.json';
+
+// Add this CSS animation code here
+const additionalStyles = `
+  .animate-fadeIn {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+`;
 
 const SpendNavigator = () => {
   const [revenue, setRevenue] = useState(80);
@@ -15,6 +39,7 @@ const SpendNavigator = () => {
   const [isRoiUpdating, setIsRoiUpdating] = useState(false);
   const [startTime, setStartTime] = useState(Date.now());
   const [counterStarted, setCounterStarted] = useState(false);
+  const [showContactForm, setShowContactForm] = useState(false);
 
   // Category spending state - updated for industry-specific categories
 const [categorySpend, setCategorySpend] = useState({
@@ -166,7 +191,16 @@ const calculateROI = () => {
 
     return () => clearInterval(interval);
   }, [counterStarted, perSecondLoss, perSecondROI, startTime, hasUserTakenAction, frozenLostAmount]);
-
+useEffect(() => {
+  const styleElement = document.createElement('style');
+  styleElement.textContent = additionalStyles;
+  document.head.appendChild(styleElement);
+  return () => {
+    if (document.head.contains(styleElement)) {
+      document.head.removeChild(styleElement);
+    }
+  };
+}, []);
   // Handle changes
   const handleRevenueChange = (e) => {
     setRevenue(parseInt(e.target.value));
@@ -651,11 +685,47 @@ const calculateROI = () => {
     <span className="bg-gradient-to-br from-slate-900 via-blue-900 to-emerald-900 px-4 text-sm text-blue-200">Get In Touch</span>
   </div>
 </div>
-{/* Contact Section */}
+{/* Optional Contact Section */}
 <div className="bg-emerald-50/30 backdrop-blur-sm rounded-2xl p-8">
-{/* Contact Form */}
-<div className="mt-8">
-  <ContactForm />
+  <div className="text-center mb-6">
+    <h3 className="text-xl font-bold text-gray-800 mb-2">
+      Want to explore this further?
+    </h3>
+    <p className="text-sm text-gray-600 mb-4">
+      You can continue using this calculator anonymously, or connect with us to discuss your specific situation.
+    </p>
+    
+    {/* Toggle Button */}
+    <button
+      onClick={() => setShowContactForm(!showContactForm)}
+      className="bg-gradient-to-r from-blue-600 to-emerald-600 text-white font-semibold py-2 px-6 rounded-xl hover:from-blue-700 hover:to-emerald-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-[1.02] active:scale-[0.98]"
+    >
+      {showContactForm ? 'Hide Contact Form' : 'Request a Conversation'}
+    </button>
+  </div>
+
+  {/* Collapsible Contact Form */}
+  {showContactForm && (
+    <div className="mt-6 animate-fadeIn">
+      <ContactForm />
+    </div>
+  )}
+  
+  {/* Trust Signals - Always Visible */}
+  <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+    <div className="bg-white/50 rounded-lg p-4">
+      <div className="text-blue-600 font-semibold mb-1">100% Free</div>
+      <div className="text-xs text-gray-600">No charges, ever</div>
+    </div>
+    <div className="bg-white/50 rounded-lg p-4">
+      <div className="text-blue-600 font-semibold mb-1">No Spam</div>
+      <div className="text-xs text-gray-600">We hate spam too</div>
+    </div>
+    <div className="bg-white/50 rounded-lg p-4">
+      <div className="text-blue-600 font-semibold mb-1">No Pressure</div>
+      <div className="text-xs text-gray-600">Genuine conversations only</div>
+    </div>
+  </div>
 </div>
       </div>
     </div>
