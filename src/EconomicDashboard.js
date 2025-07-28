@@ -114,9 +114,9 @@ const EconomicDashboard = () => {
         </div>
       </div>
 
-      <div className="mt-3 text-xs text-gray-500 text-center">
-        Economic factors affecting your indirect spend optimization
-      </div>
+<div className="mt-3 text-xs text-gray-500 text-center">
+  <strong>Live economic indicators</strong> - Rising rates increase financing costs, while inflation drives material price volatility.
+</div>
     </div>
   );
 };

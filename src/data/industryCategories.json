@@ -7,7 +7,7 @@
       "typicalSpend": 11.5,
       "savings": 20.1,
       "icon": "Truck",
-      "description": "Logistics is the single-largest controllable cost driver for omnichannel and grocery formats."
+      "description": "Network optimization projects often yield 5-10% cost savings immediately."
     },
     {
       "key": "utilities-energy",
@@ -16,7 +16,7 @@
       "typicalSpend": 2.0,
       "savings": 18,
       "icon": "Building",
-      "description": "Energy is the 4th-largest store OPEX line; every 1% saved lifts profit an equivalent 10-20% of new sales."
+      "description": "LED retrofits and HVAC optimization typically pay back within 18 months."
     },
     {
       "key": "information-technology",
