@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Search, Building, MapPin, Users, DollarSign, TrendingUp, AlertTriangle, CheckCircle, Globe, Calendar } from 'lucide-react';
+import { Search, Building, MapPin, Users, DollarSign, TrendingUp, AlertTriangle, CheckCircle, Globe} from 'lucide-react';
 
 const VendorLookup = () => {
   const [searchTerm, setSearchTerm] = useState('');

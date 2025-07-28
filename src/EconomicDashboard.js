@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { TrendingUp, TrendingDown, DollarSign, BarChart3 } from 'lucide-react';
+import { TrendingUp, TrendingDown, BarChart3 } from 'lucide-react';
 
 const EconomicDashboard = () => {
   const [economicData, setEconomicData] = useState({
@@ -16,14 +16,6 @@ const EconomicDashboard = () => {
 
   const fetchEconomicData = async () => {
     try {
-      // Using FRED API (free, no key required for basic data)
-      const indicators = [
-        { key: 'federalFundsRate', fredId: 'FEDFUNDS', name: 'Fed Funds Rate' },
-        { key: 'inflation', fredId: 'CPIAUCSL', name: 'Inflation (CPI)' },
-        { key: 'gdpGrowth', fredId: 'GDP', name: 'GDP Growth' },
-        { key: 'unemploymentRate', fredId: 'UNRATE', name: 'Unemployment' }
-      ];
-
       // For now, we'll use mock data (you can implement real FRED API later)
       const mockData = {
         federalFundsRate: { value: 5.25, change: 0.25 },
