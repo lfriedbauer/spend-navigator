@@ -40,13 +40,14 @@ const ContactForm = () => {
           <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
             <Mail className="w-6 h-6 text-green-600" />
           </div>
-          <h3 className="text-lg font-bold text-gray-800 mb-2">Thank You!</h3>
-          <p className="text-gray-600 mb-4">
-            We'll review your indirect spend profile and contact you within 24 hours with specific optimization opportunities.
-          </p>
-          <div className="text-sm text-blue-600">
-            Expected ROI analysis: <strong>$50K - $2M annually</strong>
-          </div>
+          <h3 className="text-lg font-bold text-gray-800 mb-2">Thanks for Reaching Out!</h3>
+<p className="text-gray-600 mb-4">
+  We'll be in touch soon to discuss your indirect spend challenges and explore potential optimization opportunities together.
+</p>
+<div className="text-sm text-blue-600">
+  <strong>Next step:</strong> A brief, no-pressure conversation about your goals
+</div>
+
         </div>
       </div>
     );
@@ -55,10 +56,10 @@ const ContactForm = () => {
   return (
     <div className="bg-white rounded-lg shadow border border-gray-200 p-6">
       <div className="text-center mb-6">
-        <h3 className="text-lg font-bold text-gray-800 mb-2">Get Your Custom ROI Analysis</h3>
-        <p className="text-sm text-gray-600">
-          See exactly how much your company can save across all indirect spend categories
-        </p>
+       <h3 className="text-lg font-bold text-gray-800 mb-2">Let's Talk About Your Indirect Spend</h3>
+<p className="text-sm text-gray-600">
+  We'll help you explore where you're overspending and what to do about it—no hard sell.
+</p>
       </div>
 
       <form name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit} className="space-y-4">
@@ -168,27 +169,27 @@ const ContactForm = () => {
           <label className="block text-xs font-medium text-gray-700 mb-1">
             Current Challenges (Optional)
           </label>
-          <textarea
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            rows="3"
-            className="w-full text-sm border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            placeholder="Tell us about your biggest indirect spend challenges..."
-          />
+   <textarea
+  name="message"
+  value={formData.message}
+  onChange={handleChange}
+  rows="3"
+  className="w-full text-sm border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+  placeholder="What indirect spend challenges are you facing? (Optional)"
+/>
         </div>
 
-        <button
-          type="submit"
-          disabled={isSubmitting}
-          className="w-full bg-gradient-to-r from-blue-600 to-green-600 text-white font-semibold py-3 px-6 rounded-lg hover:from-blue-700 hover:to-green-700 transition-all duration-200 disabled:opacity-50"
-        >
-          {isSubmitting ? 'Analyzing Your Profile...' : 'Get My Custom ROI Analysis'}
-        </button>
+<button
+  type="submit"
+  disabled={isSubmitting}
+  className="w-full bg-gradient-to-r from-blue-700 to-emerald-700 text-white font-semibold py-3 px-6 rounded-xl hover:from-blue-800 hover:to-emerald-800 transition-all duration-200 disabled:opacity-50 shadow-lg hover:shadow-xl"
+>
+  {isSubmitting ? 'Sending Your Message...' : 'Start the Conversation'}
+</button>
 
-        <div className="text-center text-xs text-gray-500">
-          ✓ Free analysis ✓ No commitment ✓ Results within 24 hours
-        </div>
+<div className="text-center text-xs text-gray-500">
+  ✓ Free consultation ✓ No commitment ✓ No hard sell
+</div>
       </form>
     </div>
   );
