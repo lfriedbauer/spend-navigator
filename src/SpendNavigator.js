@@ -262,7 +262,7 @@ const calculateROI = () => {
 </div>
 
         {/* Industry Selection */}
-<div className="bg-white/95 backdrop-blur-sm rounded-xl shadow-xl border border-white/30 p-6 mb-6">
+<div className="bg-white/95 backdrop-blur-sm rounded-xl shadow-xl border border-white/30 p-6 mb-8">
           <h3 className="text-sm font-bold text-gray-800 mb-3 text-center">Industry Selection</h3>
           <div className="max-w-md mx-auto">
             <select
@@ -282,7 +282,15 @@ const calculateROI = () => {
             </div>
           </div>
         </div>
-
+{/* Section Divider */}
+<div className="relative mb-8">
+  <div className="absolute inset-0 flex items-center">
+    <div className="w-full border-t border-blue-200/50"></div>
+  </div>
+  <div className="relative flex justify-center">
+    <span className="bg-gradient-to-br from-slate-900 via-blue-900 to-emerald-900 px-4 text-sm text-blue-200">Dashboard Overview</span>
+  </div>
+</div>
         {/* Main Dashboard - 2x2 Grid Layout */}
         <div className="grid grid-cols-2 gap-6 mb-8">
           
@@ -498,6 +506,15 @@ const calculateROI = () => {
 <div className="mb-6">
   <VendorLookup />
 </div>
+{/* Section Divider */}
+<div className="relative mb-8">
+  <div className="absolute inset-0 flex items-center">
+    <div className="w-full border-t border-emerald-200/50"></div>
+  </div>
+  <div className="relative flex justify-center">
+    <span className="bg-gradient-to-br from-slate-900 via-blue-900 to-emerald-900 px-4 text-sm text-emerald-200">Cost Configuration</span>
+  </div>
+</div>
 {/* Spending Summary */}
 <div className="bg-gradient-to-r from-blue-50 to-emerald-50 rounded-xl p-4 mb-6 border border-blue-200">
   <div className="flex justify-between items-center">
@@ -525,6 +542,8 @@ const calculateROI = () => {
     </div>
   </div>
 </div>
+{/* Category Configuration Section */}
+<div className="bg-blue-50/30 backdrop-blur-sm rounded-2xl p-8 mb-8">
       {/* Category Cards */}
 <div className="bg-white/95 backdrop-blur-sm rounded-xl shadow-xl border border-white/30 p-8 relative">
   <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-emerald-50/50 rounded-xl"></div>
@@ -612,6 +631,7 @@ const calculateROI = () => {
     </div>
   </div>
 </div>
+</div>
               <div className="text-sm font-bold text-green-700">
                 ROI: ${potentialSavings.toFixed(2)}M
               </div>
@@ -622,11 +642,23 @@ const calculateROI = () => {
   </div>
 </div>
 </div>
+{/* Section Divider */}
+<div className="relative mb-8">
+  <div className="absolute inset-0 flex items-center">
+    <div className="w-full border-t border-blue-200/50"></div>
+  </div>
+  <div className="relative flex justify-center">
+    <span className="bg-gradient-to-br from-slate-900 via-blue-900 to-emerald-900 px-4 text-sm text-blue-200">Get In Touch</span>
+  </div>
+</div>
+{/* Contact Section */}
+<div className="bg-emerald-50/30 backdrop-blur-sm rounded-2xl p-8">
 {/* Contact Form */}
 <div className="mt-8">
   <ContactForm />
 </div>
       </div>
+    </div>
     </div>
   );
 };
