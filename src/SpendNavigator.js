@@ -3,12 +3,6 @@ import { DollarSign, TrendingDown, Clock, TrendingUp, CreditCard, Building, Wifi
 import ContactForm from './ContactForm';
 import VendorLookup from './VendorLookup';
 import industryCategories from './data/industryCategories.json';
-import React, { useState, useEffect } from 'react';
-import { DollarSign, TrendingDown, Clock, TrendingUp, CreditCard, Building, Wifi, Truck, Package, Heart, Users, Coffee, FileText, Settings } from 'lucide-react';
-import EconomicDashboard from './EconomicDashboard';
-import VendorLookup from './VendorLookup';
-import ContactForm from './ContactForm';
-import industryCategories from './data/industryCategories.json';
 
 // Add this CSS animation code here
 const additionalStyles = `
