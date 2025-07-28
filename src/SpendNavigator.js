@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { DollarSign, TrendingDown, Clock, TrendingUp, CreditCard, Building, Wifi, Truck, Package, Heart, Users, Coffee, FileText, Settings } from 'lucide-react';
+import EconomicDashboard from './EconomicDashboard';
+import IndustryBenchmarking from './IndustryBenchmarking';
+import ContactForm from './ContactForm';
 
 const SpendNavigator = () => {
   const [revenue, setRevenue] = useState(80);
@@ -506,7 +509,17 @@ const SpendNavigator = () => {
             </div>
           </div>
         </div>
-
+<div className="mb-6">
+  <EconomicDashboard />
+</div>
+{/* Industry Benchmarking */}
+<div className="mb-6">
+  <IndustryBenchmarking 
+    industry={industry} 
+    indirectSpendPercent={indirectSpendPercent} 
+    revenue={revenue} 
+  />
+</div>
         {/* Category Cards */}
         <div className="bg-white rounded-lg shadow border border-gray-200 p-6">
           <h3 className="text-lg font-bold text-gray-800 mb-4 text-center">ROI Category Configuration</h3>
@@ -564,6 +577,10 @@ const SpendNavigator = () => {
             </div>
           ))}
         </div>
+{/* Contact Form */}
+<div className="mt-8">
+  <ContactForm />
+</div>
       </div>
     </div>
   );
