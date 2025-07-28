@@ -544,103 +544,103 @@ const calculateROI = () => {
 </div>
 {/* Category Configuration Section */}
 <div className="bg-blue-50/30 backdrop-blur-sm rounded-2xl p-8 mb-8">
-      {/* Category Cards */}
-<div className="bg-white/95 backdrop-blur-sm rounded-xl shadow-xl border border-white/30 p-8 relative">
-  <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-emerald-50/50 rounded-xl"></div>
-  <div className="relative">
-<h3 className="text-lg font-bold text-gray-800 mb-4 text-center">
-  {industryLabels[industry]} - Key Spend Categories
-</h3>
-<div className="text-center mb-6">
-  <p className="text-sm text-gray-600 mb-2">
-    Top 6 categories for your industry - adjust spending to see ROI impact
-  </p>
-  <p className="text-xs text-blue-600 bg-blue-50 rounded-lg px-4 py-2 inline-block mb-2">
-    💡 Sliders capped at ${totalIndirectSpend.toFixed(1)}M (your total indirect spend)
-  </p>
-  <p className="text-xs text-gray-500">
-    <strong>Savings percentages</strong> based on industry benchmarks from McKinsey, BCG, and procurement case studies.
-  </p>
-</div>
-  
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-{currentIndustryCategories
-  .filter(category => category.priority <= 6)
-  .sort((a, b) => a.priority - b.priority)
-  .map((category) => {
-        const IconComponent = {
-          'Building': Building,
-          'Truck': Truck, 
-          'Package': Package,
-          'Settings': Settings,
-          'CreditCard': CreditCard,
-          'Heart': Heart,
-          'Users': Users,
-          'Coffee': Coffee,
-          'FileText': FileText,
-          'Wifi': Wifi
-        }[category.icon] || Package;
-        
-        const currentSpend = categorySpend[category.key] || 0;
-        const potentialSavings = currentSpend * (category.savings / 100);
-        
-        return (
- <div key={category.key} className="bg-gradient-to-br from-white to-blue-50/50 rounded-xl p-4 border border-blue-200/50 shadow-sm hover:shadow-md transition-all duration-200">
-            <div className="flex items-center mb-3">
-              <IconComponent className="w-5 h-5 text-blue-600 mr-3" />
-              <div>
-                <h5 className="text-sm font-semibold text-gray-800">{category.name}</h5>
-                <div className="text-xs text-gray-600">Priority #{category.priority} • Typical: {category.typicalSpend}% of revenue</div>
+  {/* Category Cards */}
+  <div className="bg-white/95 backdrop-blur-sm rounded-xl shadow-xl border border-white/30 p-8 relative">
+    <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-emerald-50/50 rounded-xl"></div>
+    <div className="relative">
+      <h3 className="text-lg font-bold text-gray-800 mb-4 text-center">
+        {industryLabels[industry]} - Key Spend Categories
+      </h3>
+      <div className="text-center mb-6">
+        <p className="text-sm text-gray-600 mb-2">
+          Top 6 categories for your industry - adjust spending to see ROI impact
+        </p>
+        <p className="text-xs text-blue-600 bg-blue-50 rounded-lg px-4 py-2 inline-block mb-2">
+          💡 Sliders capped at ${totalIndirectSpend.toFixed(1)}M (your total indirect spend)
+        </p>
+        <p className="text-xs text-gray-500">
+          <strong>Savings percentages</strong> based on industry benchmarks from McKinsey, BCG, and procurement case studies.
+        </p>
+      </div>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {currentIndustryCategories
+          .filter(category => category.priority <= 6)
+          .sort((a, b) => a.priority - b.priority)
+          .map((category) => {
+            const IconComponent = {
+              'Building': Building,
+              'Truck': Truck, 
+              'Package': Package,
+              'Settings': Settings,
+              'CreditCard': CreditCard,
+              'Heart': Heart,
+              'Users': Users,
+              'Coffee': Coffee,
+              'FileText': FileText,
+              'Wifi': Wifi
+            }[category.icon] || Package;
+            
+            const currentSpend = categorySpend[category.key] || 0;
+            const potentialSavings = currentSpend * (category.savings / 100);
+            
+            return (
+              <div key={category.key} className="bg-gradient-to-br from-white to-blue-50/50 rounded-xl p-4 border border-blue-200/50 shadow-sm hover:shadow-md transition-all duration-200">
+                <div className="flex items-center mb-3">
+                  <IconComponent className="w-5 h-5 text-blue-600 mr-3" />
+                  <div>
+                    <h5 className="text-sm font-semibold text-gray-800">{category.name}</h5>
+                    <div className="text-xs text-gray-600">Priority #{category.priority} • Typical: {category.typicalSpend}% of revenue</div>
+                  </div>
+                </div>
+                
+                {category.description && (
+                  <div className="mb-3">
+                    <p className="text-xs text-gray-600 italic">{category.description}</p>
+                  </div>
+                )}
+                
+                <div className="mb-3">
+                  <label className="block text-xs text-gray-600 mb-2">
+                    Annual Spend: <span className="font-semibold text-blue-600">${currentSpend.toFixed(1)}M</span>
+                  </label>
+                  <input
+                    type="range"
+                    min="0"
+                    max={totalIndirectSpend}
+                    step="0.1"
+                    value={currentSpend}
+                    onChange={(e) => handleCategorySpendChange(category.key, e.target.value)}
+                    className="w-full h-2 bg-gray-200 rounded appearance-none cursor-pointer"
+                  />
+                  <div className="flex justify-between text-xs text-gray-500 mt-1">
+                    <span>$0M</span>
+                    <span>${totalIndirectSpend.toFixed(1)}M</span>
+                  </div>
+                </div>
+                
+                <div className="flex justify-between items-center">
+                  <div className="text-xs text-green-600">
+                    <div className="flex items-center">
+                      <span>{category.savings}% savings potential</span>
+                      <div className="ml-1 group relative">
+                        <span className="cursor-help text-gray-400">ⓘ</span>
+                        <div className="invisible group-hover:visible absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 text-xs text-white bg-gray-800 rounded whitespace-nowrap z-10">
+                          Based on industry benchmarks
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="text-sm font-bold text-green-700">
+                    ROI: ${potentialSavings.toFixed(2)}M
+                  </div>
+                </div>
               </div>
-            </div>
-            
-            {category.description && (
-              <div className="mb-3">
-                <p className="text-xs text-gray-600 italic">{category.description}</p>
-              </div>
-            )}
-            
-            <div className="mb-3">
-              <label className="block text-xs text-gray-600 mb-2">
-                Annual Spend: <span className="font-semibold text-blue-600">${currentSpend.toFixed(1)}M</span>
-              </label>
-<input
-  type="range"
-  min="0"
-  max={totalIndirectSpend}
-  step="0.1"
-  value={currentSpend}
-  onChange={(e) => handleCategorySpendChange(category.key, e.target.value)}
-  className="w-full h-2 bg-gray-200 rounded appearance-none cursor-pointer"
-/>
-<div className="flex justify-between text-xs text-gray-500 mt-1">
-  <span>$0M</span>
-  <span>${totalIndirectSpend.toFixed(1)}M</span>
-</div>
-            </div>
-            
-            <div className="flex justify-between items-center">
-<div className="text-xs text-green-600">
-  <div className="flex items-center">
-    <span>{category.savings}% savings potential</span>
-    <div className="ml-1 group relative">
-      <span className="cursor-help text-gray-400">ⓘ</span>
-      <div className="invisible group-hover:visible absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 text-xs text-white bg-gray-800 rounded whitespace-nowrap z-10">
-        Based on industry benchmarks
+            );
+          })}
       </div>
     </div>
   </div>
-</div>
-</div>
-              <div className="text-sm font-bold text-green-700">
-                ROI: ${potentialSavings.toFixed(2)}M
-              </div>
-            </div>
-          </div>
-        );
-      })}
-  </div>
-</div>
 </div>
 {/* Section Divider */}
 <div className="relative mb-8">
