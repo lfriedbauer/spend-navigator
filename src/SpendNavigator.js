@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { DollarSign, TrendingDown, Clock, TrendingUp, CreditCard, Building, Wifi, Truck, Package, Heart, Users, Coffee, FileText, Settings } from 'lucide-react';
-import EconomicDashboard from './EconomicDashboard';
 import ContactForm from './ContactForm';
 import VendorLookup from './VendorLookup';
 import industryCategories from './data/industryCategories.json';
