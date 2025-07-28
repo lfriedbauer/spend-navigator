@@ -29,7 +29,7 @@ const IndustryBenchmarking = ({ industry, indirectSpendPercent, revenue }) => {
   const potentialSavings = Math.max(0, (userSpend - benchmark.topQuartile) / 100 * revenue);
 
   return (
-    <div className="bg-white rounded-lg shadow border border-gray-200 p-4">
+    <div className="bg-white/95 backdrop-blur-sm rounded-xl shadow-xl border border-white/30 p-6">>
       <div className="flex items-center mb-4">
         <Target className="w-4 h-4 text-purple-600 mr-2" />
         <h3 className="text-sm font-bold text-gray-800">Industry Benchmarking</h3>

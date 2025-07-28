@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { DollarSign, TrendingDown, Clock, TrendingUp, CreditCard, Building, Wifi, Truck, Package, Heart, Users, Coffee, FileText, Settings } from 'lucide-react';
 import EconomicDashboard from './EconomicDashboard';
-import IndustryBenchmarking from './IndustryBenchmarking';
 import ContactForm from './ContactForm';
+import VendorLookup from './VendorLookup';
+import industryCategories from './data/industryCategories.json';
 
 const SpendNavigator = () => {
   const [revenue, setRevenue] = useState(80);
@@ -16,100 +17,55 @@ const SpendNavigator = () => {
   const [startTime, setStartTime] = useState(Date.now());
   const [counterStarted, setCounterStarted] = useState(false);
 
-  // Category spending state - 27 categories
-  const [categorySpend, setCategorySpend] = useState({
-    'banking-services': 0,
-    'merchant-card-services': 0,
-    'insurance': 0,
-    'waste-management': 0,
-    'cleaning-janitorial': 0,
-    'utilities-energy': 0,
-    'facility-management': 0,
-    'telecom': 0,
-    'information-technology': 0,
-    'managed-print-services': 0,
-    'logistics-freight': 0,
-    'small-package-freight': 0,
-    'fleet-management': 0,
-    'chemicals-industrial-gases': 0,
-    'packaging': 0,
-    'uniforms-linens': 0,
-    'office-supplies': 0,
-    'factory-consumables': 0,
-    'healthcare-products': 0,
-    'healthcare-services': 0,
-    'employment-staffing': 0,
-    'payroll-processing': 0,
-    'food-catering': 0,
-    'food-supply-purchases': 0,
-    'food-ingredients': 0,
-    'printing-services': 0,
-    'records-management': 0
-  });
+  // Category spending state - updated for industry-specific categories
+const [categorySpend, setCategorySpend] = useState({
+  // Keep existing categories
+  'banking-services': 0,
+  'merchant-card-services': 0,
+  'insurance': 0,
+  'waste-management': 0,
+  'cleaning-janitorial': 0,
+  'utilities-energy': 0,
+  'facility-management': 0,
+  'telecom': 0,
+  'information-technology': 0,
+  'managed-print-services': 0,
+  'logistics-freight': 0,
+  'small-package-freight': 0,
+  'fleet-management': 0,
+  'chemicals-industrial-gases': 0,
+  'packaging': 0,
+  'uniforms-linens': 0,
+  'office-supplies': 0,
+  'factory-consumables': 0,
+  'healthcare-products': 0,
+  'healthcare-services': 0,
+  'employment-staffing': 0,
+  'payroll-processing': 0,
+  'food-catering': 0,
+  'food-supply-purchases': 0,
+  'food-ingredients': 0,
+  'printing-services': 0,
+  'records-management': 0,
+  // Add new categories
+  'maintenance-repair': 0,
+  'cloud-hosting': 0,
+  'marketing-advertising': 0,
+  'travel-expenses': 0,
+  'medical-waste': 0,
+  'material-supplies': 0,
+  'fuel': 0,
+  'rent-lease': 0,
+  'network-capex': 0,
+  'equipment-rental': 0
+});
 
-  // Category definitions with savings percentages
-  const categories = {
-    'Financial Services': {
-      'banking-services': { 
-        name: 'Banking Services', 
-        savings: 30, 
-        icon: Building,
-        description: 'Savings achieved on reducing spend for E-Payments; Fiduciary/ Investment Management; Treasury; ATM Service & Maintenance.'
-      },
-      'merchant-card-services': { 
-        name: 'Merchant Card Services', 
-        savings: 21, 
-        icon: CreditCard,
-        description: 'Savings achieved on reducing spend connected to payments to a client by their customers via credit and debit card or ACH/eCheck payments.'
-      },
-      'insurance': { 
-        name: 'Insurance', 
-        savings: 20, 
-        icon: Building,
-        description: 'Savings achieved on reducing spend for Health, Property and Casualty, Officer and E&O Insurances.'
-      }
-    },
-    'Facilities & Operations': {
-      'waste-management': { name: 'Waste Management', savings: 35, icon: Building },
-      'cleaning-janitorial': { name: 'Cleaning/Janitorial', savings: 20.1, icon: Building },
-      'utilities-energy': { name: 'Utilities/Energy', savings: 18, icon: Building },
-      'facility-management': { name: 'Facility Management', savings: 20.1, icon: Building }
-    },
-    'Technology & Communications': {
-      'telecom': { name: 'Telecom', savings: 26, icon: Wifi },
-      'information-technology': { name: 'Information Technology', savings: 10, icon: Settings },
-      'managed-print-services': { name: 'Managed Print Services', savings: 40, icon: FileText }
-    },
-    'Supply Chain & Logistics': {
-      'logistics-freight': { name: 'Logistics & Freight', savings: 20.1, icon: Truck },
-      'small-package-freight': { name: 'Small Package Freight', savings: 20.1, icon: Package },
-      'fleet-management': { name: 'Fleet Management', savings: 21, icon: Truck }
-    },
-    'Materials & Supplies': {
-      'chemicals-industrial-gases': { name: 'Chemicals/Industrial Gases', savings: 20.1, icon: Package },
-      'packaging': { name: 'Packaging', savings: 20.1, icon: Package },
-      'uniforms-linens': { name: 'Uniforms and Linens', savings: 22.4, icon: Package },
-      'office-supplies': { name: 'Office Supplies', savings: 15, icon: Package },
-      'factory-consumables': { name: 'Factory Consumables', savings: 15, icon: Package }
-    },
-    'Healthcare': {
-      'healthcare-products': { name: 'Healthcare Products', savings: 20.1, icon: Heart },
-      'healthcare-services': { name: 'Healthcare Services', savings: 20.1, icon: Heart }
-    },
-    'HR & Staffing': {
-      'employment-staffing': { name: 'Employment Staffing', savings: 20.1, icon: Users },
-      'payroll-processing': { name: 'Payroll Processing', savings: 18, icon: Users }
-    },
-    'Food Services': {
-      'food-catering': { name: 'Food Catering', savings: 20.1, icon: Coffee },
-      'food-supply-purchases': { name: 'Food Supply Purchases', savings: 20.1, icon: Coffee },
-      'food-ingredients': { name: 'Food Ingredients', savings: 20.1, icon: Coffee }
-    },
-    'Professional Services': {
-      'printing-services': { name: 'Printing Services', savings: 12, icon: FileText },
-      'records-management': { name: 'Records Management', savings: 14, icon: FileText }
-    }
-  };
+// Get categories for selected industry
+const getIndustryCategories = (industry) => {
+  return industryCategories[industry] || [];
+};
+
+const currentIndustryCategories = getIndustryCategories(industry);
 
   // Industry benchmarks
   const industryBenchmarks = {
@@ -154,20 +110,19 @@ const SpendNavigator = () => {
   // Calculate values
   const indirectSpend = revenue * (indirectSpendPercent / 100);
   const annualSavings = indirectSpend * 0.13;
+const totalIndirectSpend = indirectSpend; // This is our slider maximum
   const perSecondLoss = (annualSavings * 1000000) / (365 * 24 * 60 * 60);
 
   // Calculate ROI from categories
-  const calculateROI = () => {
-    let totalROI = 0;
-    Object.entries(categories).forEach(([groupName, groupCategories]) => {
-      Object.entries(groupCategories).forEach(([categoryKey, categoryData]) => {
-        const spend = categorySpend[categoryKey] || 0;
-        const savings = spend * (categoryData.savings / 100);
-        totalROI += savings;
-      });
-    });
-    return totalROI;
-  };
+const calculateROI = () => {
+  let totalROI = 0;
+  currentIndustryCategories.forEach((category) => {
+    const spend = categorySpend[category.key] || 0;
+    const savings = spend * (category.savings / 100);
+    totalROI += savings;
+  });
+  return totalROI;
+};
 
   const totalROI = calculateROI();
   const perSecondROI = (totalROI * 1000000) / (365 * 24 * 60 * 60);
@@ -264,20 +219,48 @@ const SpendNavigator = () => {
   };
 
   return (
-    <div className="bg-gradient-to-br from-slate-50 to-blue-50 min-h-screen p-4">
+<div className="bg-gradient-to-br from-slate-900 via-blue-900 to-emerald-900 min-h-screen p-4">
       <div className="w-full max-w-7xl mx-auto">
-        {/* Hero Section */}
-        <div className="text-center mb-4">
-          <h2 className="text-2xl font-bold text-gray-800 mb-2">
-            Measure the Cost of <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-green-600">Inaction</span>
-          </h2>
-          <p className="text-sm text-gray-600">
-            Delaying a conversation doesn't just cost time—it costs real dollars across your indirect spend.
-          </p>
+     {/* Hero Section */}
+<div className="text-center mb-8 bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+  <h1 className="text-4xl font-bold text-white mb-4">
+    Measure the Cost of <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-400">Inaction</span>
+  </h1>
+  <p className="text-lg text-blue-100 mb-6 max-w-4xl mx-auto">
+    Delaying a conversation doesn't just cost time—it costs real dollars across your indirect spend.
+  </p>
+  
+  {/* Introductory explanation */}
+  <div className="bg-gradient-to-r from-blue-800/50 to-emerald-800/50 rounded-xl p-6 max-w-5xl mx-auto border border-white/10">
+    <h3 className="text-xl font-semibold text-white mb-3">How to Use This Intelligence Platform</h3>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-blue-100">
+      <div className="flex items-start space-x-3">
+        <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-xs">1</div>
+        <div>
+          <div className="font-semibold text-white">Select Your Industry</div>
+          <div>Choose from 10 industry benchmarks to see relevant cost categories and optimization opportunities.</div>
         </div>
+      </div>
+      <div className="flex items-start space-x-3">
+        <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-xs">2</div>
+        <div>
+          <div className="font-semibold text-white">Configure Your Profile</div>
+          <div>Adjust revenue and spending by category to model your company's specific indirect spend profile.</div>
+        </div>
+      </div>
+      <div className="flex items-start space-x-3">
+        <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-xs">3</div>
+        <div>
+          <div className="font-semibold text-white">Watch Real-Time Impact</div>
+          <div>See live calculations of cost of inaction, ROI potential, and competitive benchmarking insights.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
         {/* Industry Selection */}
-        <div className="bg-white rounded-lg shadow border border-gray-200 p-4 mb-4">
+<div className="bg-white/95 backdrop-blur-sm rounded-xl shadow-xl border border-white/30 p-6 mb-6">
           <h3 className="text-sm font-bold text-gray-800 mb-3 text-center">Industry Selection</h3>
           <div className="max-w-md mx-auto">
             <select
@@ -299,10 +282,10 @@ const SpendNavigator = () => {
         </div>
 
         {/* Main Dashboard - 2x2 Grid Layout */}
-        <div className="grid grid-cols-2 gap-4 mb-6">
+        <div className="grid grid-cols-2 gap-6 mb-8">
           
           {/* Cost of Inaction Counter */}
-          <div className="bg-white rounded-lg shadow border border-gray-200 p-4">
+<div className="bg-white/95 backdrop-blur-sm rounded-xl shadow-xl border border-white/30 p-6">
             <div className="text-center">
               <div className="flex items-center justify-center mb-2">
                 <Clock className="w-4 h-4 text-amber-600 mr-1" />
@@ -385,7 +368,7 @@ const SpendNavigator = () => {
           </div>
 
           {/* ROI Counter */}
-          <div className="bg-white rounded-lg shadow border border-gray-200 p-4">
+          <div className="bg-white/95 backdrop-blur-sm rounded-xl shadow-xl border border-white/30 p-6">
             <div className="text-center">
               <div className="flex items-center justify-center mb-2">
                 <TrendingUp className="w-4 h-4 text-green-600 mr-1" />
@@ -435,7 +418,7 @@ const SpendNavigator = () => {
           </div>
 
           {/* Company Profile */}
-          <div className="bg-white rounded-lg shadow border border-gray-200 p-4">
+          <div className="bg-white/95 backdrop-blur-sm rounded-xl shadow-xl border border-white/30 p-6">
             <h3 className="text-sm font-bold text-gray-800 mb-3 flex items-center">
               <DollarSign className="w-4 h-4 mr-1 text-green-600" />
               Company Profile
@@ -487,7 +470,7 @@ const SpendNavigator = () => {
           </div>
 
           {/* Financial Impact */}
-          <div className="bg-white rounded-lg shadow border border-gray-200 p-4">
+          <div className="bg-white/95 backdrop-blur-sm rounded-xl shadow-xl border border-white/30 p-6">
             <h3 className="text-sm font-bold text-gray-800 mb-3 flex items-center">
               <TrendingDown className="w-4 h-4 mr-1 text-green-600" />
               Financial Impact
@@ -509,74 +492,123 @@ const SpendNavigator = () => {
             </div>
           </div>
         </div>
+{/* Vendor Lookup Tool */}
 <div className="mb-6">
-  <EconomicDashboard />
+  <VendorLookup />
 </div>
-{/* Industry Benchmarking */}
-<div className="mb-6">
-  <IndustryBenchmarking 
-    industry={industry} 
-    indirectSpendPercent={indirectSpendPercent} 
-    revenue={revenue} 
-  />
+{/* Spending Summary */}
+<div className="bg-gradient-to-r from-blue-50 to-emerald-50 rounded-xl p-4 mb-6 border border-blue-200">
+  <div className="flex justify-between items-center">
+    <div>
+      <div className="text-sm font-semibold text-gray-800">Category Spend Allocated</div>
+      <div className="text-xs text-gray-600">Sum of all category spending</div>
+    </div>
+    <div className="text-right">
+      <div className="text-lg font-bold text-blue-800">
+        ${Object.values(categorySpend).reduce((sum, spend) => sum + (spend || 0), 0).toFixed(1)}M
+      </div>
+      <div className="text-xs text-gray-600">
+        of ${totalIndirectSpend.toFixed(1)}M total
+      </div>
+    </div>
+  </div>
+  <div className="mt-2">
+    <div className="w-full bg-gray-200 rounded-full h-2">
+      <div 
+        className="bg-gradient-to-r from-blue-500 to-emerald-500 h-2 rounded-full transition-all duration-300" 
+        style={{
+          width: `${Math.min(100, (Object.values(categorySpend).reduce((sum, spend) => sum + (spend || 0), 0) / totalIndirectSpend) * 100)}%`
+        }}
+      ></div>
+    </div>
+  </div>
 </div>
-        {/* Category Cards */}
-        <div className="bg-white rounded-lg shadow border border-gray-200 p-6">
-          <h3 className="text-lg font-bold text-gray-800 mb-4 text-center">ROI Category Configuration</h3>
-          <p className="text-sm text-gray-600 text-center mb-6">Adjust spending by category to see potential ROI impact</p>
-          
-          {Object.entries(categories).map(([groupName, groupCategories]) => (
-            <div key={groupName} className="mb-6">
-              <h4 className="text-md font-semibold text-gray-700 mb-3 border-b pb-1">{groupName}</h4>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
-                {Object.entries(groupCategories).map(([categoryKey, categoryData]) => {
-                  const IconComponent = categoryData.icon;
-                  const currentSpend = categorySpend[categoryKey] || 0;
-                  const potentialSavings = currentSpend * (categoryData.savings / 100);
-                  
-                  return (
-                    <div key={categoryKey} className="bg-gray-50 rounded-lg p-3 border">
-                      <div className="flex items-center mb-2">
-                        <IconComponent className="w-4 h-4 text-blue-600 mr-2" />
-                        <h5 className="text-xs font-medium text-gray-800">{categoryData.name}</h5>
-                      </div>
-                      
-                      {groupName === 'Financial Services' && categoryData.description && (
-                        <div className="mb-3">
-                          <p className="text-xs text-gray-600 italic">{categoryData.description}</p>
-                        </div>
-                      )}
-                      
-                      <div className="mb-2">
-                        <label className="block text-xs text-gray-600 mb-1">
-                          Spend: <span className="font-semibold">${currentSpend.toFixed(1)}M</span>
-                        </label>
-                        <input
-                          type="range"
-                          min="0"
-                          max="10"
-                          step="0.1"
-                          value={currentSpend}
-                          onChange={(e) => handleCategorySpendChange(categoryKey, e.target.value)}
-                          className="w-full h-1 bg-gray-200 rounded appearance-none cursor-pointer"
-                        />
-                        <div className="flex justify-between text-xs text-gray-500">
-                          <span>$0M</span>
-                          <span>$10M</span>
-                        </div>
-                      </div>
-                      
-                      <div className="text-xs text-green-600">
-                        <div>{categoryData.savings}% {groupName === 'Financial Services' ? 'average savings achieved on historical projects' : 'savings potential'}</div>
-                        <div className="font-semibold">ROI: ${potentialSavings.toFixed(2)}M</div>
-                      </div>
-                    </div>
-                  );
-                })}
+      {/* Category Cards */}
+<div className="bg-white/95 backdrop-blur-sm rounded-xl shadow-xl border border-white/30 p-8 relative">
+  <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-emerald-50/50 rounded-xl"></div>
+  <div className="relative">
+<h3 className="text-lg font-bold text-gray-800 mb-4 text-center">
+  {industryLabels[industry]} - Key Spend Categories
+</h3>
+<div className="text-center mb-6">
+  <p className="text-sm text-gray-600 mb-2">
+    Top 6 categories for your industry - adjust spending to see ROI impact
+  </p>
+  <p className="text-xs text-blue-600 bg-blue-50 rounded-lg px-4 py-2 inline-block">
+    💡 Sliders capped at ${totalIndirectSpend.toFixed(1)}M (your total indirect spend)
+  </p>
+</div>
+  
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+{currentIndustryCategories
+  .filter(category => category.priority <= 6)
+  .sort((a, b) => a.priority - b.priority)
+  .map((category) => {
+        const IconComponent = {
+          'Building': Building,
+          'Truck': Truck, 
+          'Package': Package,
+          'Settings': Settings,
+          'CreditCard': CreditCard,
+          'Heart': Heart,
+          'Users': Users,
+          'Coffee': Coffee,
+          'FileText': FileText,
+          'Wifi': Wifi
+        }[category.icon] || Package;
+        
+        const currentSpend = categorySpend[category.key] || 0;
+        const potentialSavings = currentSpend * (category.savings / 100);
+        
+        return (
+ <div key={category.key} className="bg-gradient-to-br from-white to-blue-50/50 rounded-xl p-4 border border-blue-200/50 shadow-sm hover:shadow-md transition-all duration-200">
+            <div className="flex items-center mb-3">
+              <IconComponent className="w-5 h-5 text-blue-600 mr-3" />
+              <div>
+                <h5 className="text-sm font-semibold text-gray-800">{category.name}</h5>
+                <div className="text-xs text-gray-600">Priority #{category.priority} • Typical: {category.typicalSpend}% of revenue</div>
               </div>
             </div>
-          ))}
-        </div>
+            
+            {category.description && (
+              <div className="mb-3">
+                <p className="text-xs text-gray-600 italic">{category.description}</p>
+              </div>
+            )}
+            
+            <div className="mb-3">
+              <label className="block text-xs text-gray-600 mb-2">
+                Annual Spend: <span className="font-semibold text-blue-600">${currentSpend.toFixed(1)}M</span>
+              </label>
+<input
+  type="range"
+  min="0"
+  max={totalIndirectSpend}
+  step="0.1"
+  value={currentSpend}
+  onChange={(e) => handleCategorySpendChange(category.key, e.target.value)}
+  className="w-full h-2 bg-gray-200 rounded appearance-none cursor-pointer"
+/>
+<div className="flex justify-between text-xs text-gray-500 mt-1">
+  <span>$0M</span>
+  <span>${totalIndirectSpend.toFixed(1)}M</span>
+</div>
+            </div>
+            
+            <div className="flex justify-between items-center">
+              <div className="text-xs text-green-600">
+                <div>{category.savings}% savings potential</div>
+              </div>
+              <div className="text-sm font-bold text-green-700">
+                ROI: ${potentialSavings.toFixed(2)}M
+              </div>
+            </div>
+          </div>
+        );
+      })}
+  </div>
+</div>
+</div>
 {/* Contact Form */}
 <div className="mt-8">
   <ContactForm />
