@@ -582,7 +582,7 @@ useEffect(() => {
           💡 Sliders capped at ${totalIndirectSpend.toFixed(1)}M (your total indirect spend)
         </p>
         <p className="text-xs text-gray-500">
-          <strong>Savings percentages</strong> based on industry benchmarks from McKinsey, BCG, and procurement case studies.
+          <strong>Savings percentages</strong> based on industry benchmarks. Click source links below each category for details.
         </p>
       </div>
       
@@ -648,8 +648,19 @@ useEffect(() => {
                       <span>{category.savings}% savings potential</span>
                       <div className="ml-1 group relative">
                         <span className="cursor-help text-gray-400">ⓘ</span>
-                        <div className="invisible group-hover:visible absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 text-xs text-white bg-gray-800 rounded whitespace-nowrap z-10">
-                          Based on industry benchmarks
+                        <div className="invisible group-hover:visible absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 text-xs text-white bg-gray-800 rounded whitespace-nowrap z-10 max-w-xs">
+                          <div className="mb-1">Based on industry benchmarks</div>
+                          {category.source && (
+                            <a 
+                              href={category.source} 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="text-blue-300 hover:text-blue-100 underline"
+                              onClick={(e) => e.stopPropagation()}
+                            >
+                              View source →
+                            </a>
+                          )}
                         </div>
                       </div>
                     </div>
