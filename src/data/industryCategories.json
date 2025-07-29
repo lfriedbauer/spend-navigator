@@ -25,7 +25,7 @@
       "name": "Facility & Property Management (FPM)",
       "priority": 3,
       "typicalSpend": 2.5,
-      "savings": 20.1,
+      "savings": 20,
       "icon": "Building",
       "description": "Cleaning services, maintenance, and facility management for medical environments.",
       "source": "https://www.order.co/blog/procurement/indirect-procurement-categories/"
@@ -87,7 +87,7 @@
       "name": "Logistics & Distribution",
       "priority": 3,
       "typicalSpend": 5.5,
-      "savings": 20.1,
+      "savings": 20,
       "icon": "Truck",
       "description": "Inbound materials and outbound product transportation services.",
       "source": "https://www.mckinsey.com/capabilities/operations/our-insights/indirect-procurement-insource-outsource-or-both"
@@ -107,7 +107,7 @@
       "name": "Facility & Property Management (FPM)",
       "priority": 5,
       "typicalSpend": 1.5,
-      "savings": 20.1,
+      "savings": 20,
       "icon": "Building",
       "description": "Industrial cleaning and facility maintenance services.",
       "source": "https://www.order.co/blog/procurement/indirect-procurement-categories/"
@@ -139,7 +139,7 @@
       "name": "Facility & Property Management (FPM)",
       "priority": 2,
       "typicalSpend": 11.0,
-      "savings": 20.1,
+      "savings": 20,
       "icon": "Building",
       "description": "Office cleaning, maintenance, and workspace management.",
       "source": "https://www.order.co/blog/procurement/indirect-procurement-categories/"
@@ -191,7 +191,7 @@
       "name": "Logistics & Distribution",
       "priority": 1,
       "typicalSpend": 11.5,
-      "savings": 20.1,
+      "savings": 20,
       "icon": "Truck",
       "description": "Supply chain management, last-mile delivery, and distribution services.",
       "source": "https://media-publications.bcg.com/Indirect-Spend-in-Retail-Procurement-Leader-Priorities-for-2025.pdf"
@@ -221,7 +221,7 @@
       "name": "Facility & Property Management (FPM)",
       "priority": 4,
       "typicalSpend": 2.5,
-      "savings": 20.1,
+      "savings": 20,
       "icon": "Building",
       "description": "Store cleaning, maintenance, and property management services.",
       "source": "https://www.order.co/blog/procurement/indirect-procurement-categories/"
@@ -263,7 +263,7 @@
       "name": "Facility & Property Management (FPM)",
       "priority": 2,
       "typicalSpend": 10.0,
-      "savings": 20.1,
+      "savings": 20,
       "icon": "Building",
       "description": "Tech campus maintenance and workspace management.",
       "source": "https://www.order.co/blog/procurement/indirect-procurement-categories/"
@@ -315,7 +315,7 @@
       "name": "Facility & Property Management (FPM)",
       "priority": 1,
       "typicalSpend": 8.0,
-      "savings": 20.1,
+      "savings": 20,
       "icon": "Building",
       "description": "Construction site maintenance and temporary facilities management.",
       "source": "https://www.order.co/blog/procurement/indirect-procurement-categories/"
@@ -365,7 +365,7 @@
       "name": "Logistics & Distribution",
       "priority": 6,
       "typicalSpend": 1.5,
-      "savings": 20.1,
+      "savings": 20,
       "icon": "Truck",
       "description": "Materials delivery and equipment transportation.",
       "source": "https://www.order.co/blog/procurement/indirect-procurement-categories/"
@@ -417,7 +417,7 @@
       "name": "Logistics & Distribution",
       "priority": 5,
       "typicalSpend": 1.5,
-      "savings": 20.1,
+      "savings": 20,
       "icon": "Truck",
       "description": "Equipment transportation and supply chain services.",
       "source": "https://www.order.co/blog/procurement/indirect-procurement-categories/"
@@ -459,7 +459,7 @@
       "name": "Facility & Property Management (FPM)",
       "priority": 3,
       "typicalSpend": 2.5,
-      "savings": 20.1,
+      "savings": 20,
       "icon": "Building",
       "description": "Branch and office maintenance services.",
       "source": "https://www.order.co/blog/procurement/indirect-procurement-categories/"
@@ -489,7 +489,7 @@
       "name": "Logistics & Distribution",
       "priority": 6,
       "typicalSpend": 1.5,
-      "savings": 20.1,
+      "savings": 20,
       "icon": "Truck",
       "description": "Secure document transport and cash logistics.",
       "source": "https://www.order.co/blog/procurement/indirect-procurement-categories/"
@@ -531,7 +531,7 @@
       "name": "Facility & Property Management (FPM)",
       "priority": 4,
       "typicalSpend": 2.0,
-      "savings": 20.1,
+      "savings": 20,
       "icon": "Building",
       "description": "Technical facilities and retail store maintenance.",
       "source": "https://www.order.co/blog/procurement/indirect-procurement-categories/"
@@ -551,7 +551,7 @@
       "name": "Logistics & Distribution",
       "priority": 6,
       "typicalSpend": 1.0,
-      "savings": 20.1,
+      "savings": 20,
       "icon": "Truck",
       "description": "Network equipment deployment and logistics.",
       "source": "https://www.order.co/blog/procurement/indirect-procurement-categories/"
@@ -593,7 +593,7 @@
       "name": "Logistics & Distribution",
       "priority": 4,
       "typicalSpend": 4.0,
-      "savings": 20.1,
+      "savings": 20,
       "icon": "Truck",
       "description": "Third-party logistics and subcontracted transportation.",
       "source": "https://www.order.co/blog/procurement/indirect-procurement-categories/"
@@ -613,7 +613,7 @@
       "name": "Facility & Property Management (FPM)",
       "priority": 6,
       "typicalSpend": 1.5,
-      "savings": 20.1,
+      "savings": 20,
       "icon": "Building",
       "description": "Warehouse and depot maintenance services.",
       "source": "https://www.order.co/blog/procurement/indirect-procurement-categories/"
