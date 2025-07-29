@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { DollarSign, TrendingDown, Clock, TrendingUp, CreditCard, Building, Wifi, Truck, Package, Heart, Users, Coffee, FileText, Settings } from 'lucide-react';
 import ContactForm from './ContactForm';
-import VendorLookup from './VendorLookup';
 import industryCategories from './data/industryCategories.json';
 
 // Add this CSS animation code here
@@ -530,10 +529,6 @@ useEffect(() => {
             </div>
           </div>
         </div>
-{/* Vendor Lookup Tool */}
-<div className="mb-6">
-  <VendorLookup />
-</div>
 {/* Section Divider */}
 <div className="relative mb-8">
   <div className="absolute inset-0 flex items-center">
