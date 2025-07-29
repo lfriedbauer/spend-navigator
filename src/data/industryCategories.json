@@ -1,922 +1,622 @@
 {
-  "retail": [
-    {
-      "key": "logistics-freight",
-      "name": "In-bound & last-mile freight, DC/store replenishment",
-      "priority": 1,
-      "typicalSpend": 11.5,
-      "savings": 20.1,
-      "icon": "Truck",
-      "description": "Network optimization projects often yield 5-10% cost savings immediately."
-    },
+  "healthcare": [
     {
       "key": "utilities-energy",
-      "name": "Electricity, gas & HVAC", 
-      "priority": 2,
+      "name": "Energy & Utilities",
+      "priority": 1,
       "typicalSpend": 2.0,
       "savings": 18,
       "icon": "Building",
-      "description": "LED retrofits and HVAC optimization typically pay back within 18 months."
+      "description": "Electricity, gas, water, and HVAC systems for healthcare facilities.",
+      "source": "https://www.order.co/blog/procurement/indirect-procurement-categories/"
     },
     {
       "key": "information-technology",
-      "name": "Store, e-commerce & analytics IT",
-      "priority": 3,
-      "typicalSpend": 6.0,
+      "name": "Information & Communication Technology (ICT)",
+      "priority": 2,
+      "typicalSpend": 4.5,
       "savings": 10,
       "icon": "Settings",
-      "description": "POS upgrades, e-commerce platforms and data analytics dominate current capex."
-    },
-    {
-      "key": "telecom",
-      "name": "Voice & data connectivity",
-      "priority": 4,
-      "typicalSpend": 2.5,
-      "savings": 26,
-      "icon": "Wifi",
-      "description": "High‐uptime links for price/stock sync and payment authorisations."
+      "description": "EHR systems, medical software, cybersecurity, and IT infrastructure.",
+      "source": "https://www.order.co/blog/procurement/indirect-procurement-categories/"
     },
     {
       "key": "cleaning-janitorial",
-      "name": "Store & distribution-centre cleaning",
-      "priority": 5,
-      "typicalSpend": 1.75,
+      "name": "Facility & Property Management (FPM)",
+      "priority": 3,
+      "typicalSpend": 2.5,
       "savings": 20.1,
       "icon": "Building",
-      "description": "Cleanliness drives conversion and brand perception, especially in food retail."
+      "description": "Cleaning services, maintenance, and facility management for medical environments.",
+      "source": "https://www.order.co/blog/procurement/indirect-procurement-categories/"
+    },
+    {
+      "key": "medical-waste",
+      "name": "Medical & Pharmacy",
+      "priority": 4,
+      "typicalSpend": 1.5,
+      "savings": 25,
+      "icon": "Heart",
+      "description": "Medical supplies, pharmaceuticals, and specialized healthcare products.",
+      "source": "https://droppe.com/blog/article/indirect-procurement-categories/"
+    },
+    {
+      "key": "banking-services",
+      "name": "Banking & Financial Services",
+      "priority": 5,
+      "typicalSpend": 2.5,
+      "savings": 30,
+      "icon": "CreditCard",
+      "description": "Payment processing, revenue cycle management, and financial services.",
+      "source": "https://www.brex.com/spend-trends/procurement/indirect-procurement"
     },
     {
       "key": "waste-management",
-      "name": "Cardboard, food & general waste services",
+      "name": "Waste Management",
       "priority": 6,
       "typicalSpend": 1.5,
       "savings": 35,
       "icon": "Package",
-      "description": "Rising landfill fees and ESG targets keep this firmly on the cost agenda."
-    },
-    {
-      "key": "insurance",
-      "name": "Property, liability & product-recall cover",
-      "priority": 7,
-      "typicalSpend": 1.5,
-      "savings": 20,
-      "icon": "Building",
-      "description": "Large real-estate footprint and customer traffic elevate risk premiums."
-    },
-    {
-      "key": "banking-services",
-      "name": "Merchant fees & cash-handling",
-      "priority": 8,
-      "typicalSpend": 1.15,
-      "savings": 30,
-      "icon": "CreditCard",
-      "description": "Card-present and on-line transactions drive unavoidable fee spend."
-    },
-    {
-      "key": "office-supplies",
-      "name": "Consumables & break-room stock",
-      "priority": 9,
-      "typicalSpend": 0.85,
-      "savings": 15,
-      "icon": "Package",
-      "description": "Per-employee supply costs trend $75–$90 per month in <5-employee stores."
-    },
-    {
-      "key": "printing-services",
-      "name": "Instore signage, shelf-talkers & ad flyers",
-      "priority": 10,
-      "typicalSpend": 0.5,
-      "savings": 12,
-      "icon": "FileText",
-      "description": "Still required for weekly promotions despite digital shift."
+      "description": "Medical waste disposal, hazardous materials handling, and recycling services.",
+      "source": "https://droppe.com/blog/article/indirect-procurement-categories/"
     }
   ],
   "manufacturing": [
     {
       "key": "utilities-energy",
-      "name": "Electricity, natural-gas & process steam",
+      "name": "Energy & Utilities",
       "priority": 1,
       "typicalSpend": 5.0,
       "savings": 18,
       "icon": "Building",
-      "description": "Energy is the main variable cost outside raw materials, esp. in energy-intensive lines."
+      "description": "Industrial electricity, natural gas, and process utilities for production.",
+      "source": "https://droppe.com/blog/article/indirect-procurement-categories/"
     },
     {
       "key": "maintenance-repair",
-      "name": "Plant maintenance & MRO parts",
+      "name": "Maintenance, Repair & Operations (MRO)",
       "priority": 2,
       "typicalSpend": 6.5,
       "savings": 22,
       "icon": "Settings",
-      "description": "World-class plants target ≤5% of sales; reactive sites run 10%+."
+      "description": "Equipment maintenance, spare parts, and operational supplies.",
+      "source": "https://www.mckinsey.com/capabilities/operations/our-insights/indirect-manufacturing-costs-an-overlooked-source-for-clear-savings"
     },
     {
       "key": "logistics-freight",
-      "name": "In-bound raw-material & outbound finished-goods transport",
+      "name": "Logistics & Distribution",
       "priority": 3,
       "typicalSpend": 5.5,
       "savings": 20.1,
       "icon": "Truck",
-      "description": "Network optimisation projects often yield 5-10% cost savings."
+      "description": "Inbound materials and outbound product transportation services.",
+      "source": "https://www.mckinsey.com/capabilities/operations/our-insights/indirect-procurement-insource-outsource-or-both"
     },
     {
       "key": "information-technology",
-      "name": "OT/IT, MES, ERP",
+      "name": "Information & Communication Technology (ICT)",
       "priority": 4,
-      "typicalSpend": 2.25,
+      "typicalSpend": 2.5,
       "savings": 10,
       "icon": "Settings",
-      "description": "Digital twins, predictive maintenance and ERP upgrades dominate 2025 spend."
+      "description": "Manufacturing IT systems, ERP, and industrial automation software.",
+      "source": "https://www.order.co/blog/procurement/indirect-procurement-categories/"
     },
     {
-      "key": "waste-management",
-      "name": "Scrap, hazardous & packaging waste",
+      "key": "cleaning-janitorial",
+      "name": "Facility & Property Management (FPM)",
       "priority": 5,
       "typicalSpend": 1.5,
-      "savings": 35,
-      "icon": "Package",
-      "description": "Zero-waste and circular-economy mandates driving investment."
+      "savings": 20.1,
+      "icon": "Building",
+      "description": "Industrial cleaning and facility maintenance services.",
+      "source": "https://www.order.co/blog/procurement/indirect-procurement-categories/"
     },
     {
-      "key": "insurance",
-      "name": "Property, product liability & business-interruption",
+      "key": "banking-services",
+      "name": "Banking & Financial Services",
       "priority": 6,
       "typicalSpend": 1.5,
-      "savings": 20,
-      "icon": "Building",
-      "description": "High machinery values and single-site dependency keep premiums elevated."
-    },
-    {
-      "key": "fuel",
-      "name": "Diesel & alternative fuels for internal fleets",
-      "priority": 7,
-      "typicalSpend": 1.5,
-      "savings": 25,
-      "icon": "Truck",
-      "description": "Volatile energy markets push hedging and dual-fuel strategies."
-    },
-    {
-      "key": "professional-services",
-      "name": "Engineering, EH&S, audit & consulting",
-      "priority": 8,
-      "typicalSpend": 1.0,
-      "savings": 14,
-      "icon": "FileText",
-      "description": "Regulatory compliance and ESG reporting lift advisory spend."
-    },
-    {
-      "key": "telecom",
-      "name": "Plant connectivity & IIoT data",
-      "priority": 9,
-      "typicalSpend": 0.75,
-      "savings": 26,
-      "icon": "Wifi",
-      "description": "Edge-to-cloud IIoT traffic growing 30% CAGR."
-    },
-    {
-      "key": "office-supplies",
-      "name": "Shop-floor & admin consumables",
-      "priority": 10,
-      "typicalSpend": 0.65,
-      "savings": 15,
-      "icon": "Package",
-      "description": "Lean initiatives target 10-15% reduction via point-of-use cabinets."
-    }
-  ],
-  "technology": [
-    {
-      "key": "payroll-processing",
-      "name": "Salaries, bonuses & benefits",
-      "priority": 1,
-      "typicalSpend": 50.0,
-      "savings": 18,
-      "icon": "Users",
-      "description": "Human capital is the primary value driver; equity comp excluded."
-    },
-    {
-      "key": "information-technology",
-      "name": "Internal IT & dev-tool stack",
-      "priority": 2,
-      "typicalSpend": 5.5,
-      "savings": 10,
-      "icon": "Settings",
-      "description": "Cloud IaaS, security and AI accelerators rising fastest."
-    },
-    {
-      "key": "cloud-hosting",
-      "name": "External IaaS/PaaS spend",
-      "priority": 3,
-      "typicalSpend": 10.0,
-      "savings": 20,
-      "icon": "Settings",
-      "description": "Gross-margin-sensitive line item; FinOps focus growing."
-    },
-    {
-      "key": "marketing-advertising",
-      "name": "Demand-gen & brand",
-      "priority": 4,
-      "typicalSpend": 10.5,
-      "savings": 25,
-      "icon": "FileText",
-      "description": "SaaS scale-ups routinely exceed 30% during high-growth phases."
-    },
-    {
-      "key": "telecom",
-      "name": "WAN, conference & mobile",
-      "priority": 5,
-      "typicalSpend": 1.5,
-      "savings": 26,
-      "icon": "Wifi",
-      "description": "Hybrid work keeps UCaaS volumes high."
-    },
-    {
-      "key": "insurance",
-      "name": "Cyber-risk and E&O cover",
-      "priority": 6,
-      "typicalSpend": 1.25,
-      "savings": 20,
-      "icon": "Building",
-      "description": "Cyber-premiums up >25% YoY post-ransomware surge."
-    },
-    {
-      "key": "professional-services",
-      "name": "Legal, audit & advisory",
-      "priority": 7,
-      "typicalSpend": 0.9,
-      "savings": 14,
-      "icon": "FileText",
-      "description": "IPO-track firms spend more on SOX readiness."
-    },
-    {
-      "key": "travel-expenses",
-      "name": "Sales & customer success travel",
-      "priority": 8,
-      "typicalSpend": 1.0,
       "savings": 30,
-      "icon": "Users",
-      "description": "Post-pandemic rebound but still 30% below 2019 levels."
-    },
-    {
-      "key": "office-supplies",
-      "name": "Consumables & swag",
-      "priority": 9,
-      "typicalSpend": 0.4,
-      "savings": 15,
-      "icon": "Package",
-      "description": "Remote-first policies trimmed HQ supply budgets."
-    },
-    {
-      "key": "utilities-energy",
-      "name": "Office & data-centre power",
-      "priority": 10,
-      "typicalSpend": 0.4,
-      "savings": 18,
-      "icon": "Building",
-      "description": "Green PPA adoption growing for Scope-2 goals."
-    }
-  ],
-  "healthcare": [
-    {
-      "key": "utilities-energy",
-      "name": "Electricity, steam & medical gases",
-      "priority": 1,
-      "typicalSpend": 2.0,
-      "savings": 18,
-      "icon": "Building",
-      "description": "5% energy-saving lifts non-profit margins by one full point."
-    },
-    {
-      "key": "information-technology",
-      "name": "EHR, cybersecurity & digital front door",
-      "priority": 2,
-      "typicalSpend": 4.5,
-      "savings": 10,
-      "icon": "Settings",
-      "description": "EHR upgrades + cybersecurity now >50% of new-IT budget."
-    },
-    {
-      "key": "cleaning-janitorial",
-      "name": "Environmental & terminal cleaning",
-      "priority": 3,
-      "typicalSpend": 2.5,
-      "savings": 20.1,
-      "icon": "Building",
-      "description": "Direct infection-control KPI; labor inflation hitting budgets."
-    },
-    {
-      "key": "medical-waste",
-      "name": "Regulated medical & pharma waste",
-      "priority": 4,
-      "typicalSpend": 1.5,
-      "savings": 25,
-      "icon": "Heart",
-      "description": "Strict compliance; volumes up with single-use PPE."
-    },
-    {
-      "key": "insurance",
-      "name": "Malpractice & property/casualty",
-      "priority": 5,
-      "typicalSpend": 2.5,
-      "savings": 20,
-      "icon": "Building",
-      "description": "Liability caps vary by state; premiums accelerating 8-10% p.a."
-    },
-    {
-      "key": "professional-services",
-      "name": "Physician services, audit, legal",
-      "priority": 6,
-      "typicalSpend": 1.5,
-      "savings": 14,
-      "icon": "FileText",
-      "description": "Outsourced specialists fill credential gaps."
-    },
-    {
-      "key": "telecom",
-      "name": "Network, paging & telehealth bandwidth",
-      "priority": 7,
-      "typicalSpend": 1.0,
-      "savings": 26,
-      "icon": "Wifi",
-      "description": "Tele-ICU and remote imaging driving back-haul upgrades."
-    },
-    {
-      "key": "logistics-freight",
-      "name": "Medical/surgical supplies distribution",
-      "priority": 8,
-      "typicalSpend": 1.0,
-      "savings": 20.1,
-      "icon": "Truck",
-      "description": "Cold-chain and JIT replenishment critical for high-value drugs."
-    },
-    {
-      "key": "maintenance-repair",
-      "name": "Clinical-equipment & facility MRO",
-      "priority": 9,
-      "typicalSpend": 1.0,
-      "savings": 22,
-      "icon": "Settings",
-      "description": "Predictive maintenance reduces critical-device downtime."
-    },
-    {
-      "key": "office-supplies",
-      "name": "Clinical & admin consumables",
-      "priority": 10,
-      "typicalSpend": 0.6,
-      "savings": 15,
-      "icon": "Package",
-      "description": "Digitisation trimming paper charts but PPE drives up disposables."
-    }
-  ],
-  "financial-services": [
-    {
-      "key": "information-technology",
-      "name": "Core banking, cloud & cybersecurity",
-      "priority": 1,
-      "typicalSpend": 9.0,
-      "savings": 10,
-      "icon": "Settings",
-      "description": "Banks lead all industries in IT intensity; Gen-AI pilots expanding spend."
-    },
-    {
-      "key": "insurance",
-      "name": "D&O, cyber & fidelity bonds",
-      "priority": 2,
-      "typicalSpend": 2.5,
-      "savings": 20,
-      "icon": "Building",
-      "description": "Regulatory capital requirements keep coverage high."
-    },
-    {
-      "key": "professional-services",
-      "name": "Advisory, audit, compliance",
-      "priority": 3,
-      "typicalSpend": 2.5,
-      "savings": 14,
-      "icon": "FileText",
-      "description": "SOX, Basel & ESG assurance drive consulting outlays."
-    },
-    {
-      "key": "utilities-energy",
-      "name": "Data-centre & branch energy",
-      "priority": 4,
-      "typicalSpend": 1.0,
-      "savings": 18,
-      "icon": "Building",
-      "description": "PUE improvements offset rising compute load."
-    },
-    {
-      "key": "marketing-advertising",
-      "name": "Brand, performance & CX campaigns",
-      "priority": 5,
-      "typicalSpend": 8.0,
-      "savings": 25,
-      "icon": "FileText",
-      "description": "Digital-only banks spend at upper end to acquire customers."
-    },
-    {
-      "key": "telecom",
-      "name": "Network & market-data feeds",
-      "priority": 6,
-      "typicalSpend": 1.5,
-      "savings": 26,
-      "icon": "Wifi",
-      "description": "Low-latency circuits critical for trading desks."
-    },
-    {
-      "key": "cleaning-janitorial",
-      "name": "Branch & HQ facilities",
-      "priority": 7,
-      "typicalSpend": 1.0,
-      "savings": 20.1,
-      "icon": "Building",
-      "description": "High customer-facing standards."
-    },
-    {
-      "key": "office-supplies",
-      "name": "Cash-handling & admin consumables",
-      "priority": 8,
-      "typicalSpend": 0.6,
-      "savings": 15,
-      "icon": "Package",
-      "description": "Cheque stock and secure print remain legacy spends."
-    },
-    {
-      "key": "logistics-freight",
-      "name": "Secure cash & document transport",
-      "priority": 9,
-      "typicalSpend": 0.5,
-      "savings": 20.1,
-      "icon": "Truck",
-      "description": "Armoured services for ATMs, vaults."
-    },
-    {
-      "key": "waste-management",
-      "name": "Shredding & document destruction",
-      "priority": 10,
-      "typicalSpend": 0.4,
-      "savings": 35,
-      "icon": "Package",
-      "description": "Compliance-driven chain-of-custody services."
-    }
-  ],
-  "construction": [
-    {
-      "key": "material-supplies",
-      "name": "Steel, lumber, concrete, finishes",
-      "priority": 1,
-      "typicalSpend": 60.0,
-      "savings": 15,
-      "icon": "Package",
-      "description": "Materials are >60% of residential build cost; tariffs inflate >20%."
-    },
-    {
-      "key": "payroll-processing",
-      "name": "Skilled & unskilled craft labor",
-      "priority": 2,
-      "typicalSpend": 27.5,
-      "savings": 18,
-      "icon": "Users",
-      "description": "Tight labor market adds wage-pressure >6% CAGR."
-    },
-    {
-      "key": "equipment-rental",
-      "name": "Earth-moving & access equipment",
-      "priority": 3,
-      "typicalSpend": 8.0,
-      "savings": 20,
-      "icon": "Truck",
-      "description": "Rental avoids large capex; utilisation KPI is dollar-utilisation."
-    },
-    {
-      "key": "fuel",
-      "name": "Diesel & propane for equipment",
-      "priority": 4,
-      "typicalSpend": 3.5,
-      "savings": 25,
-      "icon": "Truck",
-      "description": "Fuel hedging critical; biodiesel adoption rising."
-    },
-    {
-      "key": "insurance",
-      "name": "Builders-risk, GL & workers comp",
-      "priority": 5,
-      "typicalSpend": 3.0,
-      "savings": 20,
-      "icon": "Building",
-      "description": "Premiums track project value and EMR safety scores."
-    },
-    {
-      "key": "waste-management",
-      "name": "C&D debris hauling & tipping",
-      "priority": 6,
-      "typicalSpend": 2.5,
-      "savings": 35,
-      "icon": "Package",
-      "description": "LEED credits driving on-site sorting & recycling."
-    },
-    {
-      "key": "information-technology",
-      "name": "BIM, project-management SaaS",
-      "priority": 7,
-      "typicalSpend": 2.5,
-      "savings": 10,
-      "icon": "Settings",
-      "description": "Cloud BIM & reality capture key to cost-control."
-    },
-    {
-      "key": "professional-services",
-      "name": "Survey, design & legal",
-      "priority": 8,
-      "typicalSpend": 1.5,
-      "savings": 14,
-      "icon": "FileText",
-      "description": "Often re-billable but must be cash-flowed first."
-    },
-    {
-      "key": "utilities-energy",
-      "name": "Temporary power & water",
-      "priority": 9,
-      "typicalSpend": 0.75,
-      "savings": 18,
-      "icon": "Building",
-      "description": "Site generators and tower-crane feeds."
-    },
-    {
-      "key": "office-supplies",
-      "name": "Plans, bid-books & field consumables",
-      "priority": 10,
-      "typicalSpend": 0.5,
-      "savings": 15,
-      "icon": "Package",
-      "description": "Digital plan-rooms reducing paper spend."
+      "icon": "CreditCard",
+      "description": "Trade finance, working capital management, and payment services.",
+      "source": "https://www.brex.com/spend-trends/procurement/indirect-procurement"
     }
   ],
   "professional-services": [
     {
-      "key": "payroll-processing",
-      "name": "Salaries & partner draws",
+      "key": "information-technology",
+      "name": "Information & Communication Technology (ICT)",
       "priority": 1,
-      "typicalSpend": 62.5,
-      "savings": 18,
-      "icon": "Users",
-      "description": "Talent is inventory; utilisation drives margin."
+      "typicalSpend": 4.5,
+      "savings": 10,
+      "icon": "Settings",
+      "description": "Business software, cloud services, and IT infrastructure.",
+      "source": "https://www.order.co/blog/procurement/indirect-procurement-categories/"
     },
     {
-      "key": "rent-lease",
-      "name": "Office leases & coworking",
+      "key": "cleaning-janitorial",
+      "name": "Facility & Property Management (FPM)",
       "priority": 2,
       "typicalSpend": 11.0,
-      "savings": 20,
+      "savings": 20.1,
       "icon": "Building",
-      "description": "Prime CBD locations still command premium rents."
+      "description": "Office cleaning, maintenance, and workspace management.",
+      "source": "https://www.order.co/blog/procurement/indirect-procurement-categories/"
     },
     {
       "key": "marketing-advertising",
-      "name": "BD, events & thought-leadership",
+      "name": "Marketing & Advertising",
       "priority": 3,
       "typicalSpend": 9.0,
       "savings": 25,
       "icon": "FileText",
-      "description": "Insight content key for pipeline."
+      "description": "Business development, marketing campaigns, and brand promotion.",
+      "source": "https://droppe.com/blog/article/indirect-procurement-categories/"
     },
     {
-      "key": "information-technology",
-      "name": "Laptops, SaaS & cyber",
+      "key": "payroll-processing",
+      "name": "Personnel & HR Services Delivery",
       "priority": 4,
-      "typicalSpend": 4.5,
-      "savings": 10,
-      "icon": "Settings",
-      "description": "Knowledge-work runs on cloud productivity suites."
-    },
-    {
-      "key": "travel-expenses",
-      "name": "Client travel & lodging",
-      "priority": 5,
       "typicalSpend": 3.5,
-      "savings": 30,
+      "savings": 18,
       "icon": "Users",
-      "description": "Hybrid delivery reduced but not eliminated travel."
+      "description": "HR outsourcing, payroll processing, and talent management services.",
+      "source": "https://www.order.co/blog/procurement/indirect-procurement-categories/"
     },
     {
-      "key": "professional-services",
-      "name": "Subcontracted experts & referral fees",
-      "priority": 6,
+      "key": "banking-services",
+      "name": "Banking & Financial Services",
+      "priority": 5,
       "typicalSpend": 2.0,
-      "savings": 14,
-      "icon": "FileText",
-      "description": "Used for niche deliverables outside core expertise."
-    },
-    {
-      "key": "telecom",
-      "name": "UCaaS, mobile & conferencing",
-      "priority": 7,
-      "typicalSpend": 1.5,
-      "savings": 26,
-      "icon": "Wifi",
-      "description": "Virtual collaboration is table-stakes post-COVID."
-    },
-    {
-      "key": "insurance",
-      "name": "E&O & general liability",
-      "priority": 8,
-      "typicalSpend": 1.0,
-      "savings": 20,
-      "icon": "Building",
-      "description": "Client-mandated coverage levels."
-    },
-    {
-      "key": "office-supplies",
-      "name": "Admin & client-service consumables",
-      "priority": 9,
-      "typicalSpend": 0.7,
-      "savings": 15,
-      "icon": "Package",
-      "description": "Paperless workflows holding spend steady."
+      "savings": 30,
+      "icon": "CreditCard",
+      "description": "Corporate banking, trust accounts, and financial management services.",
+      "source": "https://www.brex.com/spend-trends/procurement/indirect-procurement"
     },
     {
       "key": "utilities-energy",
-      "name": "Office electricity & HVAC",
-      "priority": 10,
-      "typicalSpend": 0.5,
+      "name": "Energy & Utilities",
+      "priority": 6,
+      "typicalSpend": 1.5,
       "savings": 18,
       "icon": "Building",
-      "description": "Green-lease clauses tie rent escalators to efficiency."
+      "description": "Office utilities including electricity, heating, and cooling.",
+      "source": "https://droppe.com/blog/article/indirect-procurement-categories/"
+    }
+  ],
+  "retail": [
+    {
+      "key": "logistics-freight",
+      "name": "Logistics & Distribution",
+      "priority": 1,
+      "typicalSpend": 11.5,
+      "savings": 20.1,
+      "icon": "Truck",
+      "description": "Supply chain management, last-mile delivery, and distribution services.",
+      "source": "https://media-publications.bcg.com/Indirect-Spend-in-Retail-Procurement-Leader-Priorities-for-2025.pdf"
+    },
+    {
+      "key": "utilities-energy",
+      "name": "Energy & Utilities",
+      "priority": 2,
+      "typicalSpend": 2.0,
+      "savings": 18,
+      "icon": "Building",
+      "description": "Store electricity, heating, cooling, and lighting systems.",
+      "source": "https://droppe.com/blog/article/indirect-procurement-categories/"
+    },
+    {
+      "key": "information-technology",
+      "name": "Information & Communication Technology (ICT)",
+      "priority": 3,
+      "typicalSpend": 6.0,
+      "savings": 10,
+      "icon": "Settings",
+      "description": "POS systems, e-commerce platforms, and retail analytics.",
+      "source": "https://www.order.co/blog/procurement/indirect-procurement-categories/"
+    },
+    {
+      "key": "cleaning-janitorial",
+      "name": "Facility & Property Management (FPM)",
+      "priority": 4,
+      "typicalSpend": 2.5,
+      "savings": 20.1,
+      "icon": "Building",
+      "description": "Store cleaning, maintenance, and property management services.",
+      "source": "https://www.order.co/blog/procurement/indirect-procurement-categories/"
+    },
+    {
+      "key": "banking-services",
+      "name": "Banking & Financial Services",
+      "priority": 5,
+      "typicalSpend": 1.8,
+      "savings": 30,
+      "icon": "CreditCard",
+      "description": "Merchant services, payment processing, and cash management.",
+      "source": "https://www.brex.com/spend-trends/procurement/indirect-procurement"
+    },
+    {
+      "key": "waste-management",
+      "name": "Waste Management",
+      "priority": 6,
+      "typicalSpend": 1.5,
+      "savings": 35,
+      "icon": "Package",
+      "description": "Retail waste disposal, recycling, and sustainability programs.",
+      "source": "https://droppe.com/blog/article/indirect-procurement-categories/"
+    }
+  ],
+  "technology": [
+    {
+      "key": "information-technology",
+      "name": "Information & Communication Technology (ICT)",
+      "priority": 1,
+      "typicalSpend": 5.5,
+      "savings": 10,
+      "icon": "Settings",
+      "description": "Cloud infrastructure, software licenses, and development tools.",
+      "source": "https://www.order.co/blog/procurement/indirect-procurement-categories/"
+    },
+    {
+      "key": "cleaning-janitorial",
+      "name": "Facility & Property Management (FPM)",
+      "priority": 2,
+      "typicalSpend": 10.0,
+      "savings": 20.1,
+      "icon": "Building",
+      "description": "Tech campus maintenance and workspace management.",
+      "source": "https://www.order.co/blog/procurement/indirect-procurement-categories/"
+    },
+    {
+      "key": "marketing-advertising",
+      "name": "Marketing & Advertising",
+      "priority": 3,
+      "typicalSpend": 10.5,
+      "savings": 25,
+      "icon": "FileText",
+      "description": "Digital marketing, demand generation, and brand building.",
+      "source": "https://droppe.com/blog/article/indirect-procurement-categories/"
+    },
+    {
+      "key": "banking-services",
+      "name": "Banking & Financial Services",
+      "priority": 4,
+      "typicalSpend": 1.5,
+      "savings": 30,
+      "icon": "CreditCard",
+      "description": "Corporate banking and financial technology services.",
+      "source": "https://www.brex.com/spend-trends/procurement/indirect-procurement"
+    },
+    {
+      "key": "payroll-processing",
+      "name": "Personnel & HR Services Delivery",
+      "priority": 5,
+      "typicalSpend": 1.3,
+      "savings": 18,
+      "icon": "Users",
+      "description": "HR technology, payroll systems, and talent management.",
+      "source": "https://www.order.co/blog/procurement/indirect-procurement-categories/"
+    },
+    {
+      "key": "utilities-energy",
+      "name": "Energy & Utilities",
+      "priority": 6,
+      "typicalSpend": 25.1,
+      "savings": 18,
+      "icon": "Building",
+      "description": "Data center power, cooling, and office utilities.",
+      "source": "https://droppe.com/blog/article/indirect-procurement-categories/"
+    }
+  ],
+  "construction": [
+    {
+      "key": "cleaning-janitorial",
+      "name": "Facility & Property Management (FPM)",
+      "priority": 1,
+      "typicalSpend": 8.0,
+      "savings": 20.1,
+      "icon": "Building",
+      "description": "Construction site maintenance and temporary facilities management.",
+      "source": "https://www.order.co/blog/procurement/indirect-procurement-categories/"
+    },
+    {
+      "key": "utilities-energy",
+      "name": "Energy & Utilities",
+      "priority": 2,
+      "typicalSpend": 3.5,
+      "savings": 18,
+      "icon": "Building",
+      "description": "Temporary power, water, and utilities for construction sites.",
+      "source": "https://droppe.com/blog/article/indirect-procurement-categories/"
+    },
+    {
+      "key": "banking-services",
+      "name": "Banking & Financial Services",
+      "priority": 3,
+      "typicalSpend": 3.0,
+      "savings": 30,
+      "icon": "CreditCard",
+      "description": "Project financing, bonds, and payment processing.",
+      "source": "https://www.brex.com/spend-trends/procurement/indirect-procurement"
+    },
+    {
+      "key": "waste-management",
+      "name": "Waste Management",
+      "priority": 4,
+      "typicalSpend": 2.5,
+      "savings": 35,
+      "icon": "Package",
+      "description": "Construction debris removal and recycling services.",
+      "source": "https://droppe.com/blog/article/indirect-procurement-categories/"
+    },
+    {
+      "key": "information-technology",
+      "name": "Information & Communication Technology (ICT)",
+      "priority": 5,
+      "typicalSpend": 2.5,
+      "savings": 10,
+      "icon": "Settings",
+      "description": "Construction management software and project collaboration tools.",
+      "source": "https://www.order.co/blog/procurement/indirect-procurement-categories/"
+    },
+    {
+      "key": "logistics-freight",
+      "name": "Logistics & Distribution",
+      "priority": 6,
+      "typicalSpend": 1.5,
+      "savings": 20.1,
+      "icon": "Truck",
+      "description": "Materials delivery and equipment transportation.",
+      "source": "https://www.order.co/blog/procurement/indirect-procurement-categories/"
     }
   ],
   "energy": [
     {
       "key": "maintenance-repair",
-      "name": "Asset integrity & shutdowns",
+      "name": "Maintenance, Repair & Operations (MRO)",
       "priority": 1,
       "typicalSpend": 7.0,
       "savings": 22,
       "icon": "Settings",
-      "description": "Unplanned downtime costs $1 m+/day on offshore rigs."
+      "description": "Asset integrity, equipment maintenance, and operational supplies.",
+      "source": "https://www.mckinsey.com/capabilities/operations/our-insights/indirect-manufacturing-costs-an-overlooked-source-for-clear-savings"
     },
     {
       "key": "information-technology",
-      "name": "OT/SCADA, cyber & AI subsurface",
+      "name": "Information & Communication Technology (ICT)",
       "priority": 2,
       "typicalSpend": 4.0,
       "savings": 10,
       "icon": "Settings",
-      "description": "Digital twins and AI seismic interpretation expand IT share."
-    },
-    {
-      "key": "fuel",
-      "name": "Diesel & fleet fuels",
-      "priority": 3,
-      "typicalSpend": 3.5,
-      "savings": 25,
-      "icon": "Truck",
-      "description": "Drilling rigs & service fleets are fuel-intensive."
-    },
-    {
-      "key": "professional-services",
-      "name": "Engineering & environmental consults",
-      "priority": 4,
-      "typicalSpend": 2.5,
-      "savings": 14,
-      "icon": "FileText",
-      "description": "Permitting, ESG and carbon-capture studies."
-    },
-    {
-      "key": "insurance",
-      "name": "Property, pollution & business-interruption",
-      "priority": 5,
-      "typicalSpend": 2.5,
-      "savings": 20,
-      "icon": "Building",
-      "description": "High-severity risk environment."
+      "description": "SCADA systems, operational technology, and digital solutions.",
+      "source": "https://www.order.co/blog/procurement/indirect-procurement-categories/"
     },
     {
       "key": "utilities-energy",
-      "name": "Purchased power for midstream & refining",
-      "priority": 6,
-      "typicalSpend": 1.5,
+      "name": "Energy & Utilities",
+      "priority": 3,
+      "typicalSpend": 3.5,
       "savings": 18,
       "icon": "Building",
-      "description": "Grid fees rise with electrification of pumps."
+      "description": "Purchased power and utilities for operations.",
+      "source": "https://droppe.com/blog/article/indirect-procurement-categories/"
+    },
+    {
+      "key": "banking-services",
+      "name": "Banking & Financial Services",
+      "priority": 4,
+      "typicalSpend": 2.5,
+      "savings": 30,
+      "icon": "CreditCard",
+      "description": "Commodity trading, hedging, and financial services.",
+      "source": "https://www.brex.com/spend-trends/procurement/indirect-procurement"
     },
     {
       "key": "logistics-freight",
-      "name": "Pipe, equipment & fuel hauling",
-      "priority": 7,
+      "name": "Logistics & Distribution",
+      "priority": 5,
       "typicalSpend": 1.5,
       "savings": 20.1,
       "icon": "Truck",
-      "description": "Rig-move cost spikes with oil-price volatility."
+      "description": "Equipment transportation and supply chain services.",
+      "source": "https://www.order.co/blog/procurement/indirect-procurement-categories/"
     },
     {
       "key": "waste-management",
-      "name": "Produced-water & hazardous waste",
-      "priority": 8,
+      "name": "Waste Management",
+      "priority": 6,
       "typicalSpend": 1.0,
       "savings": 35,
       "icon": "Package",
-      "description": "Strict disposal regs; water-recycling capex rising."
+      "description": "Hazardous waste disposal and environmental services.",
+      "source": "https://droppe.com/blog/article/indirect-procurement-categories/"
+    }
+  ],
+  "financial-services": [
+    {
+      "key": "information-technology",
+      "name": "Information & Communication Technology (ICT)",
+      "priority": 1,
+      "typicalSpend": 9.0,
+      "savings": 10,
+      "icon": "Settings",
+      "description": "Core banking systems, cybersecurity, and fintech solutions.",
+      "source": "https://www.order.co/blog/procurement/indirect-procurement-categories/"
     },
     {
-      "key": "telecom",
-      "name": "Remote field comms & sat-link",
-      "priority": 9,
-      "typicalSpend": 0.8,
-      "savings": 26,
-      "icon": "Wifi",
-      "description": "Critical for real-time drilling telemetry."
+      "key": "banking-services",
+      "name": "Banking & Financial Services",
+      "priority": 2,
+      "typicalSpend": 2.5,
+      "savings": 30,
+      "icon": "CreditCard",
+      "description": "Interbank services and financial infrastructure.",
+      "source": "https://www.brex.com/spend-trends/procurement/indirect-procurement"
     },
     {
-      "key": "office-supplies",
-      "name": "Admin & field-support consumables",
-      "priority": 10,
-      "typicalSpend": 0.4,
-      "savings": 15,
-      "icon": "Package",
-      "description": "Digital field-tickets reduce paper."
+      "key": "cleaning-janitorial",
+      "name": "Facility & Property Management (FPM)",
+      "priority": 3,
+      "typicalSpend": 2.5,
+      "savings": 20.1,
+      "icon": "Building",
+      "description": "Branch and office maintenance services.",
+      "source": "https://www.order.co/blog/procurement/indirect-procurement-categories/"
+    },
+    {
+      "key": "utilities-energy",
+      "name": "Energy & Utilities",
+      "priority": 4,
+      "typicalSpend": 1.0,
+      "savings": 18,
+      "icon": "Building",
+      "description": "Data center and branch utilities.",
+      "source": "https://droppe.com/blog/article/indirect-procurement-categories/"
+    },
+    {
+      "key": "marketing-advertising",
+      "name": "Marketing & Advertising",
+      "priority": 5,
+      "typicalSpend": 8.0,
+      "savings": 25,
+      "icon": "FileText",
+      "description": "Customer acquisition and brand marketing.",
+      "source": "https://droppe.com/blog/article/indirect-procurement-categories/"
+    },
+    {
+      "key": "logistics-freight",
+      "name": "Logistics & Distribution",
+      "priority": 6,
+      "typicalSpend": 1.5,
+      "savings": 20.1,
+      "icon": "Truck",
+      "description": "Secure document transport and cash logistics.",
+      "source": "https://www.order.co/blog/procurement/indirect-procurement-categories/"
     }
   ],
   "telecommunications": [
     {
-      "key": "network-capex",
-      "name": "Access & core network equipment",
+      "key": "information-technology",
+      "name": "Information & Communication Technology (ICT)",
       "priority": 1,
       "typicalSpend": 16.5,
-      "savings": 15,
-      "icon": "Wifi",
-      "description": "Fibre and 5G rollout dominate capex-to-revenue ratios."
-    },
-    {
-      "key": "marketing-advertising",
-      "name": "Customer acquisition & retention",
-      "priority": 2,
-      "typicalSpend": 7.0,
-      "savings": 25,
-      "icon": "FileText",
-      "description": "High churn rates keep media spend elevated."
-    },
-    {
-      "key": "information-technology",
-      "name": "OSS/BSS, cloud & cyber",
-      "priority": 3,
-      "typicalSpend": 4.5,
       "savings": 10,
       "icon": "Settings",
-      "description": "Billing transformation and AI chatbots."
+      "description": "Network infrastructure, software, and technology platforms.",
+      "source": "https://www.order.co/blog/procurement/indirect-procurement-categories/"
     },
     {
       "key": "utilities-energy",
-      "name": "Tower & data-centre power",
-      "priority": 4,
+      "name": "Energy & Utilities",
+      "priority": 2,
       "typicalSpend": 2.5,
       "savings": 18,
       "icon": "Building",
-      "description": "Energy-per-bit reduction is key ESG metric."
+      "description": "Tower power and data center energy consumption.",
+      "source": "https://droppe.com/blog/article/indirect-procurement-categories/"
     },
     {
-      "key": "professional-services",
-      "name": "Network design & regulatory counsel",
-      "priority": 5,
-      "typicalSpend": 2.0,
-      "savings": 14,
+      "key": "marketing-advertising",
+      "name": "Marketing & Advertising",
+      "priority": 3,
+      "typicalSpend": 7.0,
+      "savings": 25,
       "icon": "FileText",
-      "description": "Spectrum auctions create episodic spikes."
-    },
-    {
-      "key": "insurance",
-      "name": "Property, cyber & liability",
-      "priority": 6,
-      "typicalSpend": 1.5,
-      "savings": 20,
-      "icon": "Building",
-      "description": "Tower-collapse and fibre cut risks."
-    },
-    {
-      "key": "logistics-freight",
-      "name": "Equipment distribution & reverse logistics",
-      "priority": 7,
-      "typicalSpend": 1.0,
-      "savings": 20.1,
-      "icon": "Truck",
-      "description": "CPE swap-outs for technology refresh programmes."
+      "description": "Customer acquisition and retention campaigns.",
+      "source": "https://droppe.com/blog/article/indirect-procurement-categories/"
     },
     {
       "key": "cleaning-janitorial",
-      "name": "Exchange & office facilities",
-      "priority": 8,
-      "typicalSpend": 0.7,
+      "name": "Facility & Property Management (FPM)",
+      "priority": 4,
+      "typicalSpend": 2.0,
       "savings": 20.1,
       "icon": "Building",
-      "description": "Raised-floor dust control critical for data centres."
+      "description": "Technical facilities and retail store maintenance.",
+      "source": "https://www.order.co/blog/procurement/indirect-procurement-categories/"
     },
     {
-      "key": "waste-management",
-      "name": "E-waste recycling & batteries",
-      "priority": 9,
-      "typicalSpend": 0.6,
-      "savings": 35,
-      "icon": "Package",
-      "description": "Regulatory take-back programmes expanding."
+      "key": "banking-services",
+      "name": "Banking & Financial Services",
+      "priority": 5,
+      "typicalSpend": 1.5,
+      "savings": 30,
+      "icon": "CreditCard",
+      "description": "Mobile money and payment infrastructure.",
+      "source": "https://www.brex.com/spend-trends/procurement/indirect-procurement"
     },
     {
-      "key": "office-supplies",
-      "name": "Consumables",
-      "priority": 10,
-      "typicalSpend": 0.4,
-      "savings": 15,
-      "icon": "Package",
-      "description": "Paperless billing cuts print spend."
+      "key": "logistics-freight",
+      "name": "Logistics & Distribution",
+      "priority": 6,
+      "typicalSpend": 1.0,
+      "savings": 20.1,
+      "icon": "Truck",
+      "description": "Network equipment deployment and logistics.",
+      "source": "https://www.order.co/blog/procurement/indirect-procurement-categories/"
     }
   ],
-  "transportation": [
+  "transportation-logistics": [
     {
-      "key": "fuel",
-      "name": "Diesel, jet & marine fuel",
+      "key": "utilities-energy",
+      "name": "Energy & Utilities",
       "priority": 1,
       "typicalSpend": 30.0,
-      "savings": 25,
-      "icon": "Truck",
-      "description": "Fuel is the dominant variable cost; hedging and route-optimisation critical."
+      "savings": 18,
+      "icon": "Building",
+      "description": "Fuel costs and facility utilities for transportation operations.",
+      "source": "https://www.order.co/blog/procurement/indirect-procurement-categories/"
     },
     {
       "key": "maintenance-repair",
-      "name": "Fleet maintenance & tyres",
+      "name": "Maintenance, Repair & Operations (MRO)",
       "priority": 2,
       "typicalSpend": 10.0,
       "savings": 22,
       "icon": "Settings",
-      "description": "Preventive programmes cut breakdown costs 20%."
+      "description": "Fleet maintenance and operational supplies.",
+      "source": "https://www.mckinsey.com/capabilities/operations/our-insights/indirect-manufacturing-costs-an-overlooked-source-for-clear-savings"
     },
     {
-      "key": "insurance",
-      "name": "Auto, cargo & liability",
+      "key": "banking-services",
+      "name": "Banking & Financial Services",
       "priority": 3,
       "typicalSpend": 5.0,
-      "savings": 20,
-      "icon": "Building",
-      "description": "Nuclear verdicts pushing premiums up 10-15 % p.a."
+      "savings": 30,
+      "icon": "CreditCard",
+      "description": "Fleet financing and payment processing.",
+      "source": "https://www.brex.com/spend-trends/procurement/indirect-procurement"
     },
     {
       "key": "logistics-freight",
-      "name": "3PL subcontract & drayage",
+      "name": "Logistics & Distribution",
       "priority": 4,
       "typicalSpend": 4.0,
       "savings": 20.1,
       "icon": "Truck",
-      "description": "Non-asset brokers rely heavily on purchased freight."
+      "description": "Third-party logistics and subcontracted transportation.",
+      "source": "https://www.order.co/blog/procurement/indirect-procurement-categories/"
     },
     {
       "key": "information-technology",
-      "name": "TMS, telematics & cybersecurity",
+      "name": "Information & Communication Technology (ICT)",
       "priority": 5,
       "typicalSpend": 3.5,
       "savings": 10,
       "icon": "Settings",
-      "description": "Dynamic routing & ELD compliance."
-    },
-    {
-      "key": "utilities-energy",
-      "name": "Warehouse power & cold-chain",
-      "priority": 6,
-      "typicalSpend": 1.5,
-      "savings": 18,
-      "icon": "Building",
-      "description": "LED retrofits cut kWh 30%."
+      "description": "Transportation management systems and telematics.",
+      "source": "https://www.order.co/blog/procurement/indirect-procurement-categories/"
     },
     {
       "key": "cleaning-janitorial",
-      "name": "Warehouse & truck-wash services",
-      "priority": 7,
-      "typicalSpend": 1.0,
+      "name": "Facility & Property Management (FPM)",
+      "priority": 6,
+      "typicalSpend": 1.5,
       "savings": 20.1,
       "icon": "Building",
-      "description": "Food-grade & pharma facilities must meet FSMA/GDP."
-    },
-    {
-      "key": "telecom",
-      "name": "Fleet comms & IoT SIMs",
-      "priority": 8,
-      "typicalSpend": 1.0,
-      "savings": 26,
-      "icon": "Wifi",
-      "description": "5G latency benefits autonomous yard tractors."
-    },
-    {
-      "key": "office-supplies",
-      "name": "Dispatch & admin consumables",
-      "priority": 9,
-      "typicalSpend": 0.6,
-      "savings": 15,
-      "icon": "Package",
-      "description": "E-BOL adoption reduces paper."
-    },
-    {
-      "key": "waste-management",
-      "name": "Pallet, dunnage & packaging recycling",
-      "priority": 10,
-      "typicalSpend": 0.5,
-      "savings": 35,
-      "icon": "Package",
-      "description": "Closed-loop pallet pools save 20% vs. one-way."
+      "description": "Warehouse and depot maintenance services.",
+      "source": "https://www.order.co/blog/procurement/indirect-procurement-categories/"
     }
   ]
 }
