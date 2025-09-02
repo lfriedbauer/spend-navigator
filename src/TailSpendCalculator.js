@@ -23,7 +23,7 @@ const TailSpendCalculator = () => {
   });
   const [darkMode, setDarkMode] = useState(() => {
     const saved = localStorage.getItem('darkMode');
-    return saved ? JSON.parse(saved) : window.matchMedia('(prefers-color-scheme: dark)').matches;
+    return saved ? JSON.parse(saved) : true; // Default to dark mode
   });
   
   // Refs for focus management
@@ -990,7 +990,7 @@ View interactive calculator: ${window.location.href}
                 ))}
               </ul>
               <p className="areas-action">
-                Pull 6 months of transactions in these categories to identify consolidation opportunities
+                Review spending in these categories to identify consolidation opportunities
               </p>
               <p className="areas-note">
                 Interactive modeling tool. Estimates based on industry benchmarks.
