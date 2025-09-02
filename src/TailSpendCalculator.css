@@ -1096,24 +1096,30 @@
   background: #10b981;
   border: 2px solid #10b981;
   color: white;
+  font-weight: 600;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
 }
 
 .btn-answer-good:hover {
   background: #059669;
   border-color: #059669;
   color: white;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.3);
 }
 
 .btn-answer-bad {
   background: #ef4444;
   border: 2px solid #ef4444;
   color: white;
+  font-weight: 600;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2);
 }
 
 .btn-answer-bad:hover {
   background: #dc2626;
   border-color: #dc2626;
   color: white;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.3);
 }
 
 /* Questions grid */
