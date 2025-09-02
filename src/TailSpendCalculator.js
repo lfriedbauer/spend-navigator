@@ -131,15 +131,15 @@ const TailSpendCalculator = () => {
   }, [operatingExpenses, industry, assessment, customSavings]);
 
   // Add calculations for real-time counters
-  const perHourLoss = useMemo(() => {
+  const perWeekLoss = useMemo(() => {
     if (!industry) return 0;
     const annualOpportunityCost = calculations.scenarios.conservative || 0;
-    return annualOpportunityCost * 1000000 / (365 * 24);
+    return annualOpportunityCost * 1000000 / 52; // 52 weeks per year
   }, [calculations.scenarios.conservative, industry]);
   
   const perSecondLoss = useMemo(() => {
-    return perHourLoss / 3600;
-  }, [perHourLoss]);
+    return perWeekLoss / (7 * 24 * 3600); // Convert weekly to per second
+  }, [perWeekLoss]);
 
   const perSecondROI = useMemo(() => {
     if (!industry) return 0;
@@ -430,12 +430,12 @@ View interactive calculator: ${window.location.href}
               <div className="insight-content">
                 {!showResults ? (
                   <>
-                    <div className="insight-label">For every hour that passes:</div>
+                    <div className="insight-label">THIS WEEK ALONE:</div>
                     <div className="insight-value negative">
-                      You lose ${Math.round(perHourLoss).toLocaleString()} in opportunity cost
+                      ${Math.max(1, Math.floor(perWeekLoss / 1000))}K in opportunity cost
                     </div>
                     <div className="insight-context">
-                      That's ${Math.round(perHourLoss * 24 * 30).toLocaleString()} every month of delay
+                      That's ${(perSecondLoss * 2592000 / 1000).toFixed(0)}K every month of delay
                     </div>
                   </>
                 ) : (
