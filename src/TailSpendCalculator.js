@@ -29,13 +29,8 @@ const TailSpendCalculator = () => {
   // Refs for focus management
   const modalRef = useRef(null);
   
-  // Real-time counter states
-  const [startTime, setStartTime] = useState(Date.now());
-  const [resultViewTime, setResultViewTime] = useState(null);
+  // Counter state - just tracks if industry is selected
   const [counterStarted, setCounterStarted] = useState(false);
-  const [lostAmount, setLostAmount] = useState(0);
-  // const [roiAmount, setRoiAmount] = useState(0); // Reserved for future use
-  const [frozenLostAmount, setFrozenLostAmount] = useState(null);
 
   // URL parameter support for sharing
   useEffect(() => {
@@ -130,62 +125,16 @@ const TailSpendCalculator = () => {
     };
   }, [operatingExpenses, industry, assessment, customSavings]);
 
-  // Add calculations for real-time counters
-  const perWeekLoss = useMemo(() => {
-    if (!industry) return 0;
-    const annualOpportunityCost = calculations.scenarios.conservative || 0;
-    return annualOpportunityCost * 1000000 / 52; // 52 weeks per year
-  }, [calculations.scenarios.conservative, industry]);
-  
-  const perSecondLoss = useMemo(() => {
-    return perWeekLoss / (7 * 24 * 3600); // Convert weekly to per second
-  }, [perWeekLoss]);
-
-  const perSecondROI = useMemo(() => {
-    if (!industry) return 0;
-    const annualROI = calculations.scenarios.moderate || 0;
-    const implementationMultiplier = 2; // 2x for focused implementation (more realistic)
-    return (annualROI * implementationMultiplier * 1000000) / (365 * 24 * 60 * 60);
-  }, [calculations.scenarios.moderate, industry]);
-
-  const catchUpTime = useMemo(() => {
-    if (!frozenLostAmount || perSecondROI <= perSecondLoss) return null;
-    const catchUpSeconds = frozenLostAmount / (perSecondROI - perSecondLoss);
-    const days = Math.ceil(catchUpSeconds / 86400);
-    return {
-      value: days,
-      text: days === 1 ? 'day' : 'days'
-    };
-  }, [frozenLostAmount, perSecondROI, perSecondLoss]);
+  // No complex calculations needed - we'll use direct values from calculations
 
   // Start counter immediately when industry is selected
   useEffect(() => {
-    if (!industry) return;
-    setCounterStarted(true);
-    setStartTime(Date.now());
+    if (!industry) {
+      setCounterStarted(false);
+    } else {
+      setCounterStarted(true);
+    }
   }, [industry]);
-
-  // Update counters more frequently
-  useEffect(() => {
-    if (!counterStarted) return;
-    
-    const interval = setInterval(() => {
-      const secondsElapsed = (Date.now() - startTime) / 1000;
-      
-      if (!showResults) {
-        setLostAmount(secondsElapsed * perSecondLoss);
-      } else if (frozenLostAmount === null) {
-        setFrozenLostAmount(lostAmount);
-        setResultViewTime(Date.now());
-      }
-      
-      if (showResults && resultViewTime) {
-        // const roiSeconds = (Date.now() - resultViewTime) / 1000;
-      }
-    }, 1000); // Update every second for smoother counting
-    
-    return () => clearInterval(interval);
-  }, [counterStarted, perSecondLoss, perSecondROI, startTime, showResults, resultViewTime, lostAmount, frozenLostAmount]);
 
   // Debounced slider handler to prevent rapid updates
   const [sliderValue, setSliderValue] = useState(operatingExpenses);
@@ -430,22 +379,22 @@ View interactive calculator: ${window.location.href}
               <div className="insight-content">
                 {!showResults ? (
                   <>
-                    <div className="insight-label">THIS WEEK ALONE:</div>
+                    <div className="insight-label">COST OF DELAY:</div>
                     <div className="insight-value negative">
-                      ${Math.max(1, Math.floor(perWeekLoss / 1000))}K in opportunity cost
+                      ${(calculations.scenarios.conservative * 1000000 / 12 / 1000).toFixed(0)}K per month
                     </div>
                     <div className="insight-context">
-                      That's ${(perSecondLoss * 2592000 / 1000).toFixed(0)}K every month of delay
+                      ${(calculations.scenarios.conservative * 1000000 / 4 / 1000).toFixed(0)}K per quarter
                     </div>
                   </>
                 ) : (
                   <>
-                    <div className="insight-label">By taking action now:</div>
+                    <div className="insight-label">BY TAKING ACTION NOW:</div>
                     <div className="insight-value positive">
-                      {catchUpTime ? `You'll recover losses in ${catchUpTime.value} ${catchUpTime.text}` : 'Immediate ROI potential'}
+                      Start saving ${calculations.scenarios.moderate.toFixed(1)}M annually
                     </div>
                     <div className="insight-context">
-                      Then earn ${calculations.scenarios.moderate.toFixed(1)}M annually
+                      ROI typically achieved within 3-6 months
                     </div>
                   </>
                 )}
