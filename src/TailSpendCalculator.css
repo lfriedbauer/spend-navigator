@@ -1,5 +1,4 @@
-/* Import the design tokens */
-@import './tokens.css';
+/* Design tokens are now imported via index.css from the shared package */
 
 /* ============================================
    Dark Mode Text Overrides
