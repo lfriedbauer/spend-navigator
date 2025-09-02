@@ -1,70 +1,76 @@
-# Getting Started with Create React App
+# Tail Spend Calculator - CFOCharm
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A sophisticated tail spend modeling tool designed for CFOs to quickly assess procurement optimization opportunities.
+
+## Features
+
+- **2-Minute Analysis**: Quick assessment with industry-specific calculations
+- **Maturity Assessment**: Personalized savings estimates based on procurement maturity
+- **Industry-Specific**: Tailored multipliers for 10+ industries
+- **Dark Mode**: Professional interface with light/dark theme toggle
+- **Customizable Savings**: Adjust conservative/moderate/aggressive scenarios
+- **Share & Export**: Copy link, email results, or print reports
+
+## Tech Stack
+
+- React 18
+- Custom CSS with CSS Variables
+- Industry data based on McKinsey, BCG, and NYU Stern research (2024)
+
+## Getting Started
+
+### Prerequisites
+- Node.js 14+ 
+- npm or yarn
+
+### Installation
+
+```bash
+# Clone the repository
+git clone [your-repo-url]
+cd spend-navigator
+
+# Install dependencies
+npm install
+
+# Start development server
+npm start
+```
+
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## Available Scripts
 
-In the project directory, you can run:
+- `npm start` - Runs the app in development mode
+- `npm test` - Launches the test runner
+- `npm run build` - Builds the app for production
+- `npm run eject` - Ejects from Create React App (one-way operation)
 
-### `npm start`
+## Calculation Methodology
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The calculator uses the following formula:
+1. **Indirect Spend** = Operating Expenses × Industry Rate (10-30%)
+2. **Tail Spend** = Indirect Spend × 20% (Pareto principle)
+3. **Savings Potential** = Tail Spend × Maturity Factor (5-20%)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Color Scheme
 
-### `npm test`
+- Primary Green: `#047857` (Savings/Success)
+- Primary Teal: `#0d9488` (Trust/Authority)
+- Accent Orange: `#c2410c` (CTAs/Actions)
+- Supports both light and dark themes
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Browser Support
 
-### `npm run build`
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## License
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Proprietary - CFOCharm.com
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Contact
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+For questions or feedback, visit [CFOCharm.com](https://cfocharm.com)

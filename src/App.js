@@ -1,7 +1,7 @@
-import SpendNavigator from './SpendNavigator';
+import TailSpendCalculator from './TailSpendCalculator';
 
 function App() {
-  return <SpendNavigator />;
+  return <TailSpendCalculator />;
 }
 
 export default App;

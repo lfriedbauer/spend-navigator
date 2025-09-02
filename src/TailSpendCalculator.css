@@ -1,0 +1,2052 @@
+/* Import the design tokens */
+@import './tokens.css';
+
+/* ============================================
+   Dark Mode Text Overrides
+   ============================================ */
+
+/* Force text colors in dark mode */
+[data-theme="dark"] {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .form-label,
+[data-theme="dark"] .question-text,
+[data-theme="dark"] .modal-title,
+[data-theme="dark"] .card-title,
+[data-theme="dark"] .scenario-title,
+[data-theme="dark"] .methodology-title,
+[data-theme="dark"] .alert-title,
+[data-theme="dark"] .breakdown-label,
+[data-theme="dark"] .area-item,
+[data-theme="dark"] .summary-value,
+[data-theme="dark"] .breakdown-item span {
+  color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .helper-text,
+[data-theme="dark"] .slider-labels,
+[data-theme="dark"] .summary-label,
+[data-theme="dark"] .scenario-percentage,
+[data-theme="dark"] .areas-note,
+[data-theme="dark"] .modal-subtitle,
+[data-theme="dark"] .methodology-list li,
+[data-theme="dark"] .footer-attribution {
+  color: var(--text-secondary) !important;
+}
+
+[data-theme="dark"] .hero-title {
+  background: linear-gradient(135deg, #ffffff 0%, #a8b2d1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: brightness(1.1);
+}
+
+[data-theme="dark"] .hero-subtitle {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .modal-content,
+[data-theme="dark"] .modal {
+  background: var(--surface-raised);
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .card {
+  background: var(--surface-raised);
+  color: var(--text-primary);
+  border-color: var(--border);
+}
+
+[data-theme="dark"] .scenario-card {
+  border: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+[data-theme="dark"] .select-input,
+[data-theme="dark"] .slider {
+  background: var(--surface-alt);
+  color: var(--text-primary);
+  border-color: var(--border);
+}
+
+[data-theme="dark"] .select-input option {
+  background: var(--surface-alt);
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .maturity-question-row,
+[data-theme="dark"] .question-card {
+  background: var(--surface-alt);
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .advanced-options {
+  background: var(--surface-alt) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Fix inline styles in dark mode */
+[data-theme="dark"] .advanced-options p,
+[data-theme="dark"] .advanced-options label {
+  color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .btn-ghost {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .btn-ghost:hover {
+  color: var(--text-primary);
+  background: var(--state-hover);
+}
+
+[data-theme="dark"] .footer {
+  background: var(--surface-alt);
+  border-top-color: var(--border);
+}
+
+[data-theme="dark"] .footer-copyright {
+  color: var(--text-emphasis);
+}
+
+/* Dark mode specific button adjustments */
+[data-theme="dark"] .btn-primary {
+  background: #6366f1;
+  color: white;
+}
+
+[data-theme="dark"] .btn-primary:hover {
+  background: #4f46e5;
+}
+
+[data-theme="dark"] .btn-secondary {
+  background: #1e293b;
+  border-color: #475569;
+  color: #e2e8f0;
+}
+
+[data-theme="dark"] .btn-secondary:hover {
+  background: #334155;
+  border-color: #64748b;
+}
+
+[data-theme="dark"] .btn-outline {
+  background: #1e293b;
+  border-color: #fb923c;
+  color: #fb923c;
+}
+
+[data-theme="dark"] .btn-outline:hover {
+  background: #ea580c;
+  color: white;
+  border-color: #ea580c;
+}
+
+[data-theme="dark"] .btn-ghost {
+  background: transparent;
+  border-color: #475569;
+  color: #94a3b8;
+}
+
+[data-theme="dark"] .btn-ghost:hover {
+  background: #1e293b;
+  border-color: #64748b;
+}
+
+/* Dark mode - unselected buttons */
+[data-theme="dark"] .btn-answer {
+  background: #1e293b;  /* Very dark background */
+  border: 2px solid #334155;
+  color: #94a3b8;
+  transition: all 0.15s;
+}
+
+[data-theme="dark"] .btn-answer:hover {
+  background: #334155;
+  border-color: #475569;
+  color: #e2e8f0;
+}
+
+/* Dark mode - SELECTED good answer (green with glow) */
+[data-theme="dark"] .btn-answer-good {
+  background: #10b981 !important;  /* Bright green */
+  border-color: #10b981 !important;
+  color: white !important;
+  font-weight: 600;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25);  /* Green glow */
+}
+
+[data-theme="dark"] .btn-answer-good:hover {
+  background: #059669 !important;
+  border-color: #059669 !important;
+  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.3);
+}
+
+/* Dark mode - SELECTED bad answer (red with glow) */
+[data-theme="dark"] .btn-answer-bad {
+  background: #ef4444 !important;  /* Bright red */
+  border-color: #ef4444 !important;
+  color: white !important;
+  font-weight: 600;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.25);  /* Red glow */
+}
+
+[data-theme="dark"] .btn-answer-bad:hover {
+  background: #dc2626 !important;
+  border-color: #dc2626 !important;
+  box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.3);
+}
+
+/* Make the maturity insight box stand out more */
+[data-theme="dark"] .maturity-insight {
+  background: rgba(99, 102, 241, 0.2);
+  border: 1px solid rgba(99, 102, 241, 0.5);
+  color: #c7d2fe;
+}
+
+/* ============================================
+   Base Styles - Professional & Clean
+   ============================================ */
+   
+.tail-spend-calculator {
+  min-height: 100vh;
+  background: var(--surface);
+  color: var(--text-primary);
+  transition: background var(--transition-base);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+/* ============================================
+   Typography - Authoritative
+   ============================================ */
+
+.hero-section {
+  padding: var(--space-2xl) 0;
+  text-align: center;
+  position: relative;
+  background: linear-gradient(180deg, 
+    rgba(79, 70, 229, 0.03) 0%,    /* Very subtle indigo */
+    rgba(5, 150, 105, 0.02) 50%,   /* Very subtle emerald */
+    rgba(255, 255, 255, 0) 100%);
+}
+
+.hero-title {
+  font-size: clamp(1.75rem, 4vw, 3rem);
+  font-weight: 800;
+  background: var(--text-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.1;
+  margin-bottom: var(--space-md);
+  letter-spacing: -0.03em;
+  white-space: normal;
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: clamp(1.25rem, 3.5vw, 2rem);
+  }
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-xl);
+  font-weight: 400;
+}
+
+/* ============================================
+   Opportunity Insight - Real-time Counter
+   ============================================ */
+
+.opportunity-insight {
+  padding: 1.5rem 0;
+  margin: 1rem 0;
+}
+
+.insight-card {
+  background: linear-gradient(135deg, 
+    rgba(239, 68, 68, 0.03) 0%, 
+    rgba(34, 197, 94, 0.03) 100%);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.insight-label {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.insight-value {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  transition: all 10s ease; /* Smooth transitions over 10s */
+}
+
+.insight-value.negative {
+  color: var(--negative);
+}
+
+.insight-value.positive {
+  color: var(--positive);
+}
+
+.insight-context {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+/* Dark mode adjustments for insight card */
+[data-theme="dark"] .insight-card {
+  background: linear-gradient(135deg, 
+    rgba(239, 68, 68, 0.05) 0%, 
+    rgba(34, 197, 94, 0.05) 100%);
+  border-color: var(--border);
+}
+
+[data-theme="dark"] .insight-label {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .insight-context {
+  color: var(--text-muted);
+}
+
+/* ============================================
+   Cards - Sophisticated & Minimal
+   ============================================ */
+
+.card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+  overflow: hidden;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(79, 70, 229, 0.2);
+  transform: translateY(-2px);
+}
+
+.card-content {
+  padding: var(--space-lg);
+}
+
+/* Summary card - gradient top border */
+.summary-card {
+  background: white;
+  position: relative;
+  padding-top: 3px;
+  border: 1px solid var(--border);
+}
+
+.summary-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--accent-gradient);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-xl);
+  padding: var(--space-xl);
+}
+
+.summary-item {
+  text-align: center;
+}
+
+.summary-value {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: var(--text-emphasis);
+  margin-bottom: var(--space-xs);
+}
+
+.summary-value.highlight {
+  color: var(--indigo);
+}
+
+.summary-label {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Better tooltip positioning to prevent cutoff */
+.summary-item {
+  position: relative;
+  overflow: visible; /* Important: allow tooltips to extend outside */
+}
+
+.with-tooltip {
+  position: relative;
+  cursor: help;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.info-hint {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  opacity: 0.6;
+  cursor: help;
+  transition: opacity 0.2s;
+}
+
+.with-tooltip:hover .info-hint {
+  opacity: 1;
+}
+
+/* Tooltip that won't get cut off */
+.tooltip {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--navy-900);
+  color: white;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  z-index: 9999; /* Very high z-index */
+  width: 280px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  white-space: normal;
+  line-height: 1.4;
+}
+
+/* For items on the right side, flip tooltip to the left */
+.summary-item:last-child .tooltip,
+.summary-item:nth-last-child(2) .tooltip {
+  left: auto;
+  right: 0;
+  transform: none;
+}
+
+/* Show on hover */
+.with-tooltip:hover .tooltip {
+  opacity: 1;
+}
+
+/* Arrow for tooltip */
+.tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: var(--navy-900);
+}
+
+/* For right-aligned tooltips, adjust arrow position */
+.summary-item:last-child .tooltip::after,
+.summary-item:nth-last-child(2) .tooltip::after {
+  left: auto;
+  right: 20px;
+  transform: none;
+}
+
+/* Mobile fallback - show inline on small screens */
+@media (max-width: 768px) {
+  .info-hint {
+    display: none;
+  }
+  
+  .tooltip {
+    position: static;
+    transform: none;
+    opacity: 1;
+    pointer-events: auto;
+    background: var(--surface-alt);
+    color: var(--text-secondary);
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    font-size: 0.75rem;
+    box-shadow: none;
+  }
+  
+  .tooltip::after {
+    display: none;
+  }
+}
+
+/* Dark mode adjustments for tooltips */
+[data-theme="dark"] .tooltip {
+  background: var(--navy-900);
+  color: white;
+}
+
+/* Info icon - make it visible in dark mode */
+[data-theme="dark"] .info-icon,
+[data-theme="dark"] .info-hint {
+  color: #6366f1;  /* Bright indigo */
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+[data-theme="dark"] .info-icon:hover,
+[data-theme="dark"] .info-hint:hover {
+  opacity: 1;
+  color: #818cf8;  /* Lighter on hover */
+}
+
+/* Add background circle for better visibility */
+[data-theme="dark"] .with-tooltip .info-hint {
+  background: rgba(99, 102, 241, 0.15);
+  border-radius: 50%;
+  padding: 2px;
+  width: 18px;
+  height: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ensure the summary card doesn't clip tooltips */
+.summary-card {
+  overflow: visible;
+  position: relative;
+  z-index: 1;
+}
+
+.summary-grid {
+  overflow: visible;
+}
+
+/* Alternative: Move tooltip below if at top of viewport */
+@media (max-height: 600px) {
+  .tooltip {
+    bottom: auto;
+    top: calc(100% + 10px);
+  }
+  
+  .tooltip::after {
+    top: auto;
+    bottom: 100%;
+    border-top-color: transparent;
+    border-bottom-color: var(--navy-900);
+  }
+}
+
+/* ============================================
+   Financial Indicators - Professional
+   ============================================ */
+
+.scenario-amount {
+  color: var(--emerald);
+  font-weight: 700;
+  font-size: 1.875rem;
+  margin: var(--space-sm) 0;
+}
+
+/* breakdown-value is now defined with the breakdown-list styles */
+
+.total-value {
+  color: var(--positive);
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+/* Make breakdown total stand out more */
+.breakdown-total .total-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/* Alert cards - subtle with left border */
+.alert-card {
+  background: var(--caution-bg);
+  border-left: 4px solid var(--caution-border);
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+}
+
+/* Industry-specific cards - enhanced visual interest */
+/* areas-card is defined in the results section styles */
+
+.areas-card[data-industry="technology"] {
+  border-left: 3px solid var(--indigo);
+  background: linear-gradient(90deg, rgba(79, 70, 229, 0.03) 0%, transparent 10%);
+}
+
+.areas-card[data-industry="healthcare"] {
+  border-left: 3px solid var(--emerald);
+  background: linear-gradient(90deg, rgba(5, 150, 105, 0.03) 0%, transparent 10%);
+}
+
+.areas-card[data-industry="financialServices"] {
+  border-left: 3px solid var(--coral);
+  background: linear-gradient(90deg, rgba(249, 115, 22, 0.03) 0%, transparent 10%);
+}
+
+.areas-card[data-industry="energy"] {
+  border-left-color: var(--amber-600);
+}
+
+.areas-card[data-industry="manufacturing"] {
+  border-left-color: var(--slate);
+}
+
+/* ============================================
+   Buttons - Solid Colors for Better Visibility
+   ============================================ */
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.15s;
+  border: none;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+/* Primary - Solid indigo */
+.btn-primary {
+  background: #4f46e5;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #4338ca;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
+}
+
+/* Secondary - White with border */
+.btn-secondary {
+  background: white;
+  color: #1f2937;
+  border: 2px solid #d1d5db;
+}
+
+.btn-secondary:hover {
+  background: #f3f4f6;
+  border-color: #9ca3af;
+}
+
+/* Outline - Orange accent */
+.btn-outline {
+  background: white;
+  color: #ea580c;
+  border: 2px solid #ea580c;
+}
+
+.btn-outline:hover {
+  background: #ea580c;
+  color: white;
+}
+
+/* Ghost - Minimal with border */
+.btn-ghost {
+  background: transparent;
+  color: #64748b;
+  border: 2px solid #cbd5e1;
+  padding: 0.625rem 1.25rem;
+}
+
+.btn-ghost:hover {
+  background: #f8fafc;
+  border-color: #94a3b8;
+}
+
+/* Large variant */
+.btn-large {
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+}
+
+/* ============================================
+   Form Controls - Clean & Accessible
+   ============================================ */
+
+.form-group {
+  margin-bottom: var(--space-lg);
+}
+
+.form-label {
+  display: block;
+  margin-bottom: var(--space-sm);
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.select-input {
+  width: 100%;
+  padding: 0.75rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-size: 1rem;
+  transition: all var(--transition-fast);
+  min-height: 48px;
+}
+
+.select-input:hover {
+  border-color: var(--border-strong);
+}
+
+.select-input:focus {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: var(--focus-ring-offset);
+  border-color: transparent;
+}
+
+/* Slider */
+.slider {
+  width: 100%;
+  height: 6px;
+  background: var(--border);
+  border-radius: var(--radius-sm);
+  outline: none;
+  transition: all var(--transition-fast);
+  -webkit-appearance: none;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: var(--indigo);
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast);
+}
+
+.slider::-webkit-slider-thumb:hover {
+  box-shadow: var(--shadow-md);
+  transform: scale(1.1);
+}
+
+/* Light mode slider track for better visibility */
+.slider::-webkit-slider-track {
+  background: #e5e7eb;
+  height: 8px;
+  border-radius: 4px;
+}
+
+.slider::-moz-range-track {
+  background: #e5e7eb;
+  height: 8px;
+  border-radius: 4px;
+}
+
+.slider-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--indigo);
+  margin: var(--space-md) 0;
+}
+
+.slider-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--space-sm);
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.helper-text {
+  margin-top: var(--space-sm);
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+/* ============================================
+   Modal - Clean & Professional
+   ============================================ */
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--surface-overlay);
+  z-index: 1000;
+  animation: fadeIn var(--transition-fast);
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--surface);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  z-index: 1001;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: auto;
+  animation: slideUp var(--transition-base);
+}
+
+.modal-wide {
+  width: 800px;
+}
+
+.modal-content {
+  padding: var(--space-xl);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: var(--space-lg);
+}
+
+.modal-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-emphasis);
+}
+
+.modal-subtitle {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-top: var(--space-xs);
+}
+
+/* ============================================
+   Toast Notifications - Subtle
+   ============================================ */
+
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--surface-raised);
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border);
+  z-index: 2000;
+  animation: slideIn var(--transition-base);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.toast.success {
+  border-left: 4px solid var(--positive);
+}
+
+.toast.success::before {
+  content: '✓';
+  color: var(--positive);
+  font-weight: bold;
+  font-size: 1.125rem;
+}
+
+.toast.error {
+  border-left: 4px solid var(--negative);
+}
+
+.toast.error::before {
+  content: '⚠';
+  color: var(--negative);
+  font-weight: bold;
+  font-size: 1.125rem;
+}
+
+/* ============================================
+   Trust Signals
+   ============================================ */
+
+.trust-signals {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-xl);
+  margin-top: var(--space-lg);
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+.icon-check {
+  color: var(--emerald);
+  width: 20px;
+  height: 20px;
+}
+
+/* ============================================
+   Animations - Subtle
+   ============================================ */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -45%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Make the modal footer buttons match */
+[data-theme="dark"] .modal-footer .btn-primary {
+  background: #6366f1;
+  color: white;
+  border: none;
+}
+
+[data-theme="dark"] .modal-footer .btn-ghost {
+  background: transparent;
+  border: 2px solid #475569;
+  color: #94a3b8;
+}
+
+[data-theme="dark"] .modal-footer .btn-ghost:hover {
+  background: #334155;
+  border-color: #64748b;
+  color: #e2e8f0;
+}
+
+/* ============================================
+   Dark Mode Toggle
+   ============================================ */
+
+.dark-mode-toggle {
+  position: fixed;
+  top: var(--space-md);
+  right: var(--space-md);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  z-index: 1000;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-sm);
+}
+
+.dark-mode-toggle:hover {
+  box-shadow: var(--shadow-md);
+  transform: scale(1.05);
+}
+
+/* ============================================
+   Accessibility
+   ============================================ */
+
+/* Focus indicators */
+*:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: var(--focus-ring-offset);
+}
+
+/* Skip to content link */
+.skip-to-content {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--navy);
+  color: var(--text-inverse);
+  padding: var(--space-sm) var(--space-md);
+  text-decoration: none;
+  border-radius: var(--radius-md);
+}
+
+.skip-to-content:focus {
+  top: var(--space-sm);
+}
+
+/* ============================================
+   Additional Component Styles
+   ============================================ */
+
+/* Input section */
+.input-section {
+  padding: var(--space-xl) 0;
+}
+
+.input-card {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Card titles */
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-emphasis);
+  margin-bottom: var(--space-md);
+}
+
+/* Close button */
+.btn-close {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: var(--space-sm);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.btn-close:hover {
+  background: var(--state-hover);
+  color: var(--text-primary);
+}
+
+/* Modal body and footer */
+.modal-body {
+  margin: var(--space-lg) 0;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: var(--space-xl);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--border);
+}
+
+/* Assessment buttons */
+.btn-answer {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.625rem 1.25rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.15s;
+  min-width: 80px;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.btn-answer-good {
+  background: #10b981;
+  border: 2px solid #10b981;
+  color: white;
+}
+
+.btn-answer-good:hover {
+  background: #059669;
+  border-color: #059669;
+  color: white;
+}
+
+.btn-answer-bad {
+  background: #ef4444;
+  border: 2px solid #ef4444;
+  color: white;
+}
+
+.btn-answer-bad:hover {
+  background: #dc2626;
+  border-color: #dc2626;
+  color: white;
+}
+
+/* Questions grid */
+.questions-grid {
+  display: grid;
+  gap: var(--space-lg);
+  margin: var(--space-xl) 0;
+}
+
+.question-card {
+  padding: var(--space-md);
+  background: var(--surface-alt);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+}
+
+.question-text {
+  font-weight: 500;
+  margin-bottom: var(--space-md);
+  color: var(--text-primary);
+}
+
+.question-buttons {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+/* Maturity insight */
+.maturity-insight {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  background: var(--neutral-bg);
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+/* Clean up the maturity assessment modal */
+.maturity-questions {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.maturity-question-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  padding: 1.25rem;
+  background: #f9fafb;
+  border-radius: 8px;
+  gap: 2rem;
+}
+
+.question-text {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #1f2937;
+}
+
+.answer-buttons {
+  display: flex;
+  gap: 0.75rem;
+}
+
+/* Make buttons consistent and professional */
+.btn-answer {
+  padding: 0.5rem 1.25rem;
+  min-width: 75px;
+  height: 40px;
+  background: white;
+  border: 2px solid #d1d5db;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+}
+
+.btn-answer:hover {
+  background: #f3f4f6;
+  border-color: #9ca3af;
+}
+
+
+/* Fix the insight box at bottom */
+.maturity-insight {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+  color: #0369a1;
+}
+
+/* Scenarios grid */
+.scenarios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-lg);
+  margin: var(--space-xl) 0;
+}
+
+.scenario-card {
+  padding: var(--space-lg);
+  text-align: center;
+}
+
+.scenario-title {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-sm);
+}
+
+.scenario-percentage {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+/* Breakdown card */
+.breakdown-card {
+  padding: var(--space-lg);
+}
+
+.breakdown-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-lg);
+  margin-top: var(--space-lg);
+}
+
+.breakdown-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 1.5rem 0;
+}
+
+.breakdown-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.breakdown-label {
+  flex: 1;
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+}
+
+.breakdown-value {
+  font-weight: 600;
+  color: var(--indigo);
+  text-align: right;
+  min-width: 80px;
+}
+
+/* Methodology */
+.methodology-card {
+  padding: var(--space-lg);
+  background: var(--surface-alt);
+}
+
+.methodology-title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-emphasis);
+  margin-bottom: var(--space-md);
+}
+
+.methodology-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.methodology-list li {
+  padding: var(--space-sm) 0;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border);
+}
+
+.methodology-list li:last-child {
+  border-bottom: none;
+}
+
+/* Alert content */
+.alert-content {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.alert-icon {
+  font-size: 1.5rem;
+}
+
+.alert-title {
+  font-weight: 600;
+  color: var(--text-emphasis);
+  margin-bottom: var(--space-xs);
+}
+
+.alert-text {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+/* Areas list */
+/* Remove the default bullets from the areas list */
+.areas-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.area-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  list-style: none; /* Extra insurance */
+  color: var(--text-secondary);
+}
+
+/* Keep only the colored dot */
+.area-bullet {
+  width: 8px;
+  height: 8px;
+  background: var(--emerald-600);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.areas-note {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-top: var(--space-md);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--border);
+}
+
+/* Actions */
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem auto;
+  padding: 1rem 0;
+}
+
+/* Advanced options */
+.advanced-options {
+  margin-top: var(--space-md);
+  padding: var(--space-md);
+  background: var(--surface-alt);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+}
+
+/* Results section */
+.results-section {
+  padding: var(--space-2xl) 0;
+  background: var(--surface-alt);
+}
+
+/* ============================================
+   Uniform Section Spacing System
+   ============================================ */
+
+/* Reset all card margins first */
+.results-section .card {
+  margin: 0;
+}
+
+/* Apply consistent spacing BETWEEN cards */
+.results-section > .container > * {
+  margin-bottom: 2rem;
+}
+
+/* Remove bottom margin from last element */
+.results-section > .container > *:last-child {
+  margin-bottom: 0;
+}
+
+/* Specific card adjustments */
+.summary-card {
+  margin-bottom: 2rem;
+}
+
+.methodology-card {
+  margin-bottom: 2rem;
+}
+
+.alert-card {
+  margin-bottom: 2rem;
+}
+
+.scenarios-grid {
+  margin-bottom: 2rem;
+}
+
+.breakdown-card {
+  margin-bottom: 2rem;
+}
+
+.areas-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--emerald-600);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 2rem;
+}
+
+/* Action buttons need more space above */
+.action-buttons {
+  margin-top: 3rem;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+/* Internal card padding - consistent */
+.card {
+  padding: 1.75rem;
+}
+
+.scenario-card {
+  padding: 1.5rem;
+}
+
+/* Fix the breakdown list spacing */
+.breakdown-list {
+  margin: 0;
+  padding: 0;
+}
+
+.breakdown-item {
+  padding: 0.875rem 0;
+  margin: 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.breakdown-item:first-child {
+  padding-top: 0;
+}
+
+.breakdown-item:last-child {
+  padding-bottom: 0.875rem;
+  border-bottom: none;
+}
+
+.breakdown-total {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 2px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+}
+
+/* Areas card specific spacing */
+.areas-list {
+  margin: 1rem 0 1.5rem 0;
+  padding: 0;
+}
+
+.areas-action {
+  margin: 1.5rem 0;
+  background: #f0f9ff;
+  padding: 1rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  color: #0369a1;
+  border-left: 3px solid #0284c7;
+  font-weight: 500;
+}
+
+.areas-note {
+  margin: 1rem 0 0 0;
+  padding-top: 1rem;
+}
+
+/* Methodology list internal spacing */
+.methodology-list {
+  margin: 1rem 0 0 0;
+  padding: 0;
+}
+
+.methodology-list li {
+  padding: 0.625rem 0;
+  margin: 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.methodology-list li:last-child {
+  border-bottom: none;
+}
+
+/* Mobile responsive spacing */
+@media (max-width: 768px) {
+  .results-section > .container > * {
+    margin-bottom: 1.5rem;
+  }
+  
+  .card {
+    padding: 1.25rem;
+  }
+  
+  .action-buttons {
+    margin-top: 2rem;
+  }
+}
+
+/* ============================================
+   Scenarios Table Styles - Enhanced Design
+   ============================================ */
+
+.table-container {
+  overflow-x: auto;
+}
+
+.scenarios-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Header styling */
+.scenarios-table thead th {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  padding: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  color: #475569;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+/* Scenario column headers - distinct colors */
+.scenarios-table thead th:nth-child(2) { /* Conservative */
+  color: #64748b;
+}
+
+.scenarios-table thead th:nth-child(3) { /* Moderate */
+  color: #4f46e5;
+}
+
+.scenarios-table thead th:nth-child(4) { /* Aggressive */
+  color: #059669;
+}
+
+.scenarios-table th .sub {
+  display: block;
+  font-weight: 400;
+  text-transform: none;
+  font-size: 0.75rem;
+  opacity: 0.8;
+  margin-top: 0.25rem;
+}
+
+/* Data cells */
+.scenarios-table tbody td {
+  padding: 0.875rem 1rem;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+/* Source column */
+.scenarios-table tbody td:first-child {
+  font-weight: 500;
+  color: #334155;
+}
+
+/* Value columns - color coded */
+.scenarios-table tbody td:nth-child(2) { /* Conservative */
+  text-align: center;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.scenarios-table tbody td:nth-child(3) { /* Moderate */
+  text-align: center;
+  font-weight: 600;
+  color: #4f46e5;
+}
+
+.scenarios-table tbody td:nth-child(4) { /* Aggressive */
+  text-align: center;
+  font-weight: 600;
+  color: #059669;
+}
+
+/* Total row - make it stand out */
+.scenarios-table tbody tr:last-child {
+  background: linear-gradient(90deg, #fafbfc 0%, #f8fafc 100%);
+}
+
+.scenarios-table tbody tr:last-child td {
+  padding: 1rem;
+  border-bottom: none;
+  border-top: 2px solid #cbd5e1;
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+
+.scenarios-table tbody tr:last-child td:first-child {
+  color: #1e293b;
+}
+
+/* Hover effect for data rows */
+.scenarios-table tbody tr:not(:last-child):hover {
+  background: #fafbfc;
+  transition: background 0.2s ease;
+}
+
+/* Dark mode adjustments */
+[data-theme="dark"] .scenarios-table thead th {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  color: #94a3b8;
+  border-bottom-color: #334155;
+}
+
+[data-theme="dark"] .scenarios-table thead th:nth-child(2) {
+  color: #94a3b8;
+}
+
+[data-theme="dark"] .scenarios-table thead th:nth-child(3) {
+  color: #818cf8;
+}
+
+[data-theme="dark"] .scenarios-table thead th:nth-child(4) {
+  color: #34d399;
+}
+
+[data-theme="dark"] .scenarios-table tbody td {
+  border-bottom-color: #334155;
+}
+
+[data-theme="dark"] .scenarios-table tbody td:first-child {
+  color: #cbd5e1;
+}
+
+[data-theme="dark"] .scenarios-table tbody td:nth-child(2) {
+  color: #94a3b8;
+}
+
+[data-theme="dark"] .scenarios-table tbody td:nth-child(3) {
+  color: #818cf8;
+}
+
+[data-theme="dark"] .scenarios-table tbody td:nth-child(4) {
+  color: #34d399;
+}
+
+[data-theme="dark"] .scenarios-table tbody tr:last-child {
+  background: linear-gradient(90deg, #1e293b 0%, #334155 100%);
+}
+
+[data-theme="dark"] .scenarios-table tbody tr:last-child td {
+  border-top-color: #475569;
+}
+
+[data-theme="dark"] .scenarios-table tbody tr:last-child td:first-child {
+  color: #f1f5f9;
+}
+
+[data-theme="dark"] .scenarios-table tbody tr:not(:last-child):hover {
+  background: rgba(30, 41, 59, 0.5);
+}
+
+/* Mobile responsive for table */
+@media (max-width: 768px) {
+  .scenarios-table {
+    min-width: 500px;
+  }
+  
+  .scenarios-table th,
+  .scenarios-table td {
+    padding: 0.75rem 0.5rem;
+    font-size: 0.875rem;
+  }
+  
+  .scenarios-table tbody tr:last-child td {
+    font-size: 1rem;
+  }
+}
+
+/* ============================================
+   Consistent Spacing System
+   ============================================ */
+
+/* Base spacing between all major sections */
+.results-section .card {
+  margin-bottom: 2.5rem;
+}
+
+/* Consistent internal padding for all cards */
+.card {
+  padding: 0; /* Reset */
+}
+
+.card-content,
+.summary-grid,
+.methodology-card,
+.breakdown-card,
+.areas-card,
+.scenario-card {
+  padding: 2rem;
+}
+
+/* Section headers - consistent treatment */
+.card-title,
+.methodology-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-emphasis);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+/* Methodology card specific */
+.methodology-card {
+  padding: 2rem;
+}
+
+.methodology-list {
+  margin: 1.5rem 0;
+  padding: 0;
+}
+
+.methodology-list li {
+  padding: 0.5rem 0;
+  margin: 0;
+}
+
+/* Scenarios grid - proper spacing */
+.scenarios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem; /* Space after scenarios */
+}
+
+/* Breakdown card spacing */
+.breakdown-list {
+  margin: 1.5rem 0;
+}
+
+.breakdown-item {
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.breakdown-item:first-child {
+  padding-top: 0;
+}
+
+.breakdown-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.breakdown-total {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid var(--border);
+}
+
+/* Areas card */
+.areas-card {
+  padding: 2rem;
+}
+
+.areas-list {
+  margin: 1.5rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.area-item {
+  padding: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.areas-action {
+  background: #eff6ff;
+  border: 1px solid #3b82f6;
+  border-left: 4px solid #3b82f6;
+  padding: 1rem 1.25rem;
+  border-radius: 6px;
+  margin: 1.5rem 0;
+  font-size: 0.9375rem;
+  color: #1e40af;
+  font-weight: 500;
+}
+
+.areas-note {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+/* Action buttons section */
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 3rem auto 2rem;
+  padding: 0;
+}
+
+/* Summary section at top */
+.summary-card {
+  margin-bottom: 2.5rem;
+}
+
+/* Alert card when shown */
+.alert-card {
+  margin-bottom: 2.5rem;
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+
+.footer {
+  margin-top: 4rem;
+  padding: 2rem 0;
+  background: var(--surface-alt);
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.footer-attribution {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-sm);
+}
+
+.footer-copyright {
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+/* ============================================
+   Print Styles
+   ============================================ */
+
+@media print {
+  .dark-mode-toggle,
+  .btn-outline,
+  .modal-backdrop,
+  .toast {
+    display: none !important;
+  }
+  
+  .card {
+    box-shadow: none !important;
+    border: 1px solid var(--border) !important;
+    page-break-inside: avoid;
+  }
+  
+  body {
+    background: white !important;
+  }
+}
+
+/* ============================================
+   Dark Mode Critical Fixes
+   ============================================ */
+
+/* Fix hero title spacing - letter cut off */
+.hero-title {
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+}
+
+/* Fix slider visibility in dark mode - COMPLETE FIX */
+[data-theme="dark"] .slider {
+  background: rgba(71, 85, 105, 0.5); /* Visible gray track */
+  height: 8px;
+  border-radius: 4px;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+[data-theme="dark"] .slider::-webkit-slider-track {
+  background: transparent; /* Track is handled by .slider background */
+  height: 8px;
+  border-radius: 4px;
+}
+
+[data-theme="dark"] .slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  background: #6366f1; /* Bright indigo thumb */
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.3), 0 2px 4px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+}
+
+[data-theme="dark"] .slider::-webkit-slider-thumb:hover {
+  background: #818cf8;
+  transform: scale(1.1);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.4), 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* Firefox support */
+[data-theme="dark"] .slider::-moz-range-track {
+  background: transparent;
+  height: 8px;
+  border-radius: 4px;
+}
+
+[data-theme="dark"] .slider::-moz-range-thumb {
+  background: #6366f1;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: none;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.3), 0 2px 4px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+[data-theme="dark"] .slider::-moz-range-thumb:hover {
+  background: #818cf8;
+  transform: scale(1.1);
+}
+
+[data-theme="dark"] .slider::-moz-range-track {
+  background: rgba(148, 163, 184, 0.3);
+  height: 8px;
+  border-radius: 4px;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+}
+
+[data-theme="dark"] .slider::-moz-range-thumb {
+  background: #6366f1;
+  width: 24px;
+  height: 24px;
+  border: none;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+  cursor: pointer;
+}
+
+/* Center the main CTA button */
+.input-card .btn-large {
+  display: block;
+  margin: 2rem auto 0;
+  max-width: 300px;
+}
+
+/* Fix input card in dark mode */
+[data-theme="dark"] .input-card {
+  background: rgba(30, 41, 59, 0.5);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+/* Modal buttons more prominent */
+[data-theme="dark"] .btn-answer {
+  background: rgba(241, 245, 249, 0.95);
+  color: #1e293b;
+  border: 2px solid transparent;
+  font-weight: 600;
+}
+
+[data-theme="dark"] .btn-answer:hover {
+  background: #ffffff;
+  transform: scale(1.05);
+}
+
+
+/* Modal footer buttons in dark mode */
+[data-theme="dark"] .modal-footer .btn-ghost {
+  background: transparent;
+  border: 2px solid rgba(148, 163, 184, 0.5);
+  color: #94a3b8;
+}
+
+[data-theme="dark"] .modal-footer .btn-primary {
+  background: #6366f1;
+  color: white;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+/* Ensure all text is readable */
+[data-theme="dark"] .card,
+[data-theme="dark"] .modal-content {
+  color: #f1f5f9;
+}
+
+[data-theme="dark"] .text-secondary,
+[data-theme="dark"] .helper-text,
+[data-theme="dark"] .form-label {
+  color: #94a3b8 !important;
+}
