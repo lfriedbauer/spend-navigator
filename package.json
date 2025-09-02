@@ -15,8 +15,8 @@
   },
   "scripts": {
     "sync-tokens": "cp ../design-tokens/tokens.css src/tokens.css",
-    "start": "npm run sync-tokens && react-scripts start",
-    "build": "npm run sync-tokens && react-scripts build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
