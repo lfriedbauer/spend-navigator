@@ -1,0 +1,17 @@
+{
+  "project": "spend-navigator",
+  "type": "create-react-app",
+  "version": "0.1.0",
+  "dependencies": {
+    "required": ["react", "react-dom", "react-scripts"],
+    "optional": ["lucide-react"],
+    "unused": ["@testing-library", "web-vitals"]
+  },
+  "styling": "tailwind-cdn",
+  "deployment": "vercel",
+  "currentFiles": {
+    "main": "src/SpendNavigator.js",
+    "data": "src/data/industryCategories.json",
+    "entry": "src/App.js"
+  }
+}

@@ -36,7 +36,6 @@ const TailSpendCalculator = () => {
   const [lostAmount, setLostAmount] = useState(0);
   // const [roiAmount, setRoiAmount] = useState(0); // Reserved for future use
   const [frozenLostAmount, setFrozenLostAmount] = useState(null);
-  const [hoursElapsed, setHoursElapsed] = useState(0);
 
   // URL parameter support for sharing
   useEffect(() => {
@@ -132,11 +131,15 @@ const TailSpendCalculator = () => {
   }, [operatingExpenses, industry, assessment, customSavings]);
 
   // Add calculations for real-time counters
-  const perSecondLoss = useMemo(() => {
+  const perHourLoss = useMemo(() => {
     if (!industry) return 0;
     const annualOpportunityCost = calculations.scenarios.conservative || 0;
-    return annualOpportunityCost * 1000000 / (365 * 24 * 60 * 60);
+    return annualOpportunityCost * 1000000 / (365 * 24);
   }, [calculations.scenarios.conservative, industry]);
+  
+  const perSecondLoss = useMemo(() => {
+    return perHourLoss / 3600;
+  }, [perHourLoss]);
 
   const perSecondROI = useMemo(() => {
     if (!industry) return 0;
@@ -168,8 +171,6 @@ const TailSpendCalculator = () => {
     
     const interval = setInterval(() => {
       const secondsElapsed = (Date.now() - startTime) / 1000;
-      const hours = secondsElapsed / 3600;
-      setHoursElapsed(hours);
       
       if (!showResults) {
         setLostAmount(secondsElapsed * perSecondLoss);
@@ -429,14 +430,12 @@ View interactive calculator: ${window.location.href}
               <div className="insight-content">
                 {!showResults ? (
                   <>
-                    <div className="insight-label">Time elapsed: {hoursElapsed < 1 ? Math.round(hoursElapsed * 60) + ' minutes' : hoursElapsed.toFixed(1) + ' hours'}</div>
+                    <div className="insight-label">For every hour that passes:</div>
                     <div className="insight-value negative">
-                      ${counterStarted 
-                        ? Math.round(lostAmount).toLocaleString() 
-                        : Math.round(perSecondLoss * 30).toLocaleString()} in opportunity cost
+                      You lose ${Math.round(perHourLoss).toLocaleString()} in opportunity cost
                     </div>
                     <div className="insight-context">
-                      That's ${Math.round(perSecondLoss * 2592000).toLocaleString()} every month of delay
+                      That's ${Math.round(perHourLoss * 24 * 30).toLocaleString()} every month of delay
                     </div>
                   </>
                 ) : (
@@ -1001,7 +1000,7 @@ View interactive calculator: ${window.location.href}
             {/* Action Buttons */}
             <div className="action-buttons">
               <button
-                onClick={() => window.open('https://calendly.com/cfocharm', '_blank')}
+                onClick={() => window.open('https://calendly.com/insights-cfocharm/30min', '_blank')}
                 className="btn btn-primary btn-large"
               >
                 <Calendar size={20} />
