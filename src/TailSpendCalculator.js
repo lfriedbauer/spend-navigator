@@ -23,7 +23,7 @@ const TailSpendCalculator = () => {
   });
   const [darkMode, setDarkMode] = useState(() => {
     const saved = localStorage.getItem('darkMode');
-    return saved ? JSON.parse(saved) : true; // Default to dark mode
+    return saved ? JSON.parse(saved) : false; // Default to light mode
   });
   
   // Refs for focus management
